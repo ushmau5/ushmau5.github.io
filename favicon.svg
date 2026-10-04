@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0a0a09;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="favicon">
+      <rect class="cls-1" width="32" height="32" rx="9.38" ry="9.38"/>
+      <g id="logomark">
+        <path class="cls-2" d="M16,10.85c2.4,0,4.41,1.63,4.99,3.85h4.76c-.64-4.82-4.76-8.53-9.75-8.53s-9.11,3.72-9.75,8.53h4.76c.58-2.21,2.59-3.85,4.99-3.85Z"/>
+        <path class="cls-2" d="M16,21.15c-2.4,0-4.41-1.63-4.99-3.85h-4.76c.64,4.82,4.76,8.53,9.75,8.53s9.11-3.72,9.75-8.53h-4.76c-.58,2.21-2.59,3.85-4.99,3.85Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
