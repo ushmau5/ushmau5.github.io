@@ -18,6 +18,10 @@
     --muted-2:rgba(255,255,255,.4);
     --surface:rgba(64,70,77,.35);
     --line:rgba(64,70,77,.8);
+    /* mirrors tcg-portfolio-ui tailwind.config.js */
+    --radius:10px;
+    --gutter:12px;
+    --cta:50px;
   }
 
   *{box-sizing:border-box;}
@@ -38,7 +42,7 @@
   }
 
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-  @media (max-width:720px){.wrap{padding:0 20px;}}
+  @media (max-width:720px){.wrap{padding:0 var(--gutter);}}
 
   /* ---------- header ---------- */
   header.wrap{padding-top:28px;}
@@ -85,8 +89,8 @@
   }
   .store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;}
   .store-badge{
-    display:flex;align-items:center;gap:9px;height:46px;padding:0 18px;
-    border-radius:999px;background:var(--surface);border:1px solid var(--line);
+    display:flex;align-items:center;gap:9px;height:var(--cta);padding:0 16px;
+    border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
     text-decoration:none;transition:border-color .15s,transform .15s;
   }
   .store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}
@@ -102,7 +106,7 @@
   .mock{
     background:linear-gradient(160deg,rgba(185,182,233,.18),transparent 55%),var(--surface);
     border:1px solid var(--line);
-    border-radius:24px;
+    border-radius:var(--radius);
     padding:24px;
     box-shadow:0 40px 80px -30px rgba(0,0,0,.65);
   }
@@ -111,14 +115,14 @@
   .mock-name{font-weight:500;font-size:28px;letter-spacing:-.02em;margin-top:6px;}
   .mock-condrow{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
   .chip{
-    font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;
+    font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;
     background:transparent;color:var(--muted);border:1px solid var(--line);
   }
   .chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);}
 
   .price-block{
     margin-top:20px;background:var(--bg);border:1px solid var(--line);
-    border-radius:16px;padding:18px 18px 16px;
+    border-radius:var(--radius);padding:18px 18px 16px;
   }
   .price-block .pb-top{display:flex;align-items:baseline;justify-content:space-between;}
   .price-block .pb-label{font-size:13px;color:var(--muted);font-weight:500;}
@@ -136,7 +140,7 @@
   .up{color:var(--accent);}
 
   .legal{
-    padding:0 32px 32px;
+    padding-bottom:32px;
     display:flex;flex-wrap:wrap;align-items:center;gap:10px;
     font-size:12px;color:var(--muted-2);
   }
