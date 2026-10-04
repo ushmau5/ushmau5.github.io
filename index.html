@@ -18,6 +18,8 @@
     --muted-2:rgba(255,255,255,.4);
     --surface:rgba(64,70,77,.35);
     --line:rgba(64,70,77,.8);
+    --success:hsl(124 60% 60%);
+    --destructive:hsl(0 84% 60%);
     /* mirrors tcg-portfolio-ui tailwind.config.js */
     --radius:10px;
     --gutter:12px;
@@ -120,24 +122,31 @@
   }
   .chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);}
 
-  .price-block{
-    margin-top:20px;background:var(--bg);border:1px solid var(--line);
-    border-radius:var(--radius);padding:18px 18px 16px;
+  .ph{margin-top:20px;}
+  .ph-label{font-size:13px;color:var(--muted);font-weight:500;}
+  .ph-val{font-weight:700;font-size:32px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:2px;}
+  .ph-change{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;margin-top:2px;}
+  .ph-caption{color:var(--muted-2);}
+  .chart{position:relative;margin:14px -24px 0;height:160px;touch-action:pan-y;cursor:crosshair;}
+  .chart svg{display:block;width:100%;height:100%;overflow:visible;}
+  .chart .line{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+  .chart .area{fill:var(--accent);fill-opacity:.06;}
+  .chart .cross{stroke:#fff;stroke-opacity:.35;stroke-dasharray:3 4;}
+  .chart .dot{fill:var(--accent);}
+  .chart .ring{fill:var(--accent);transform-box:fill-box;transform-origin:center;animation:ring 2s ease-out infinite;}
+  @keyframes ring{from{transform:scale(.42);opacity:.5;}to{transform:scale(1);opacity:0;}}
+  .periods{display:flex;justify-content:space-between;margin-top:12px;}
+  .periods button{
+    font:inherit;font-size:12px;font-weight:700;color:var(--muted);
+    background:none;border:0;border-radius:999px;padding:6px 12px;cursor:pointer;
   }
-  .price-block .pb-top{display:flex;align-items:baseline;justify-content:space-between;}
-  .price-block .pb-label{font-size:13px;color:var(--muted);font-weight:500;}
-  .price-block .pb-val{
-    font-weight:700;font-size:32px;letter-spacing:-.02em;
-    font-variant-numeric:tabular-nums;
-  }
-  .range{position:relative;height:3px;background:var(--slate);border-radius:3px;margin:18px 2px 8px;}
-  .range .fill{position:absolute;inset:0;left:18%;right:22%;background:var(--accent);border-radius:3px;}
-  .range .knob{position:absolute;top:50%;left:52%;width:11px;height:11px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(185,182,233,.35);}
-  .range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted-2);font-variant-numeric:tabular-nums;}
+  .periods button[aria-pressed="true"]{background:rgba(185,182,233,.15);color:var(--accent);}
+  @media (max-width:420px){.periods button{padding:6px 8px;}}
 
   .mock-holdings{margin-top:16px;font-size:13px;color:var(--muted-2);display:flex;flex-wrap:wrap;align-items:center;gap:7px;}
   .mock-holdings b{color:var(--muted);font-weight:500;}
-  .up{color:var(--accent);}
+  .up{color:var(--success);}
+  .down{color:var(--destructive);}
 
   .legal{
     padding-bottom:32px;
@@ -189,7 +198,7 @@
       </div>
     </div>
 
-    <div class="mock" aria-hidden="true">
+    <div class="mock" role="figure" aria-label="Example price chart for a PSA 10 Pikachu">
       <div class="mock-top">
         <span class="mock-set">Jungle · 60</span>
       </div>
@@ -198,14 +207,21 @@
         <span class="chip">Ungraded</span>
         <span class="chip on">PSA</span>
       </div>
-      <div class="price-block">
-        <div class="pb-top">
-          <span class="pb-label">PSA 10</span>
-          <span class="pb-val">$45</span>
-        </div>
-        <div class="range"><div class="fill"></div><div class="knob"></div></div>
-        <div class="range-labels"><span>LOW $38</span><span>HIGH $52</span></div>
+      <div class="ph">
+        <div class="ph-label">PSA 10</div>
+        <div class="ph-val" id="ph-val">$45.00</div>
+        <div class="ph-change"><span id="ph-change"></span><span class="ph-caption" id="ph-caption"></span></div>
       </div>
+      <div class="chart" id="chart">
+        <svg>
+          <path class="area" />
+          <path class="line" />
+          <line class="cross" y1="0" visibility="hidden" />
+          <circle class="ring" r="12" />
+          <circle class="dot" r="4" />
+        </svg>
+      </div>
+      <div class="periods" id="periods"></div>
       <div class="mock-holdings"><b>Portfolio value</b> &nbsp;$14,208&nbsp; <span class="up">▲ 6.2%</span> this month</div>
     </div>
   </section>
@@ -218,5 +234,166 @@
   <span class="dot"></span>
   <a href="delete-account.html">Delete Account</a>
 </footer>
+
+
+<script>
+// Chart maths ported from tcg-portfolio-ui src/features/portfolio/chartGeometry.ts.
+(() => {
+  const PERIODS = [
+    { label: '7D', days: 7, caption: 'Past week', ys: [43.5, 44.2, 43.8, 44.9, 44.1, 44.6, 45] },
+    { label: '1M', days: 30, caption: 'Past month', ys: [38, 38.6, 39.4, 39, 40.2, 41, 40.5, 41.8, 42.6, 42.1, 43.4, 44, 43.6, 45] },
+    { label: '3M', days: 91, caption: 'Past 3 months', ys: [34, 35.2, 34.6, 36.8, 36, 38.2, 37.4, 39, 38.1, 40.5, 41.2, 40.4, 42.8, 44.1, 45] },
+    { label: '6M', days: 182, caption: 'Past 6 months', ys: [41, 39.5, 37.8, 38.4, 36.2, 35, 36.4, 34.8, 37.2, 38.9, 40.6, 42.3, 43.5, 45] },
+    { label: 'YTD', days: null, caption: 'Year to date', ys: [29, 30.5, 32, 31.2, 33.8, 35.5, 34.2, 36.9, 38.4, 37.1, 39.6, 41.8, 40.5, 43.2, 45] },
+    { label: '1Y', days: 365, caption: 'Past year', ys: [52, 49.5, 47, 48.2, 44.8, 42, 39.5, 36.8, 33.4, 31, 32.6, 35.2, 38.8, 37.5, 41.2, 43.9, 45] },
+  ];
+  const PLOT = { left: 6, right: 14, top: 12, bottomGap: 8 };
+  const HEADROOM = 1.12;
+  const DRAW_MS = 1100;
+
+  // Fritsch-Carlson tangents: the cubic never passes the real minimum or maximum.
+  const monotoneTangents = (xs, ys) => {
+    const n = xs.length;
+    const slopes = [];
+    for (let i = 0; i < n - 1; i++) slopes.push((ys[i + 1] - ys[i]) / (xs[i + 1] - xs[i]));
+    const t = [slopes[0]];
+    for (let i = 1; i < n - 1; i++) t.push(slopes[i - 1] * slopes[i] <= 0 ? 0 : (slopes[i - 1] + slopes[i]) / 2);
+    t.push(slopes[n - 2]);
+    for (let i = 0; i < n - 1; i++) {
+      if (slopes[i] === 0) { t[i] = 0; t[i + 1] = 0; continue; }
+      const a = t[i] / slopes[i], b = t[i + 1] / slopes[i], len = a * a + b * b;
+      if (len > 9) { const k = 3 / Math.sqrt(len); t[i] = k * a * slopes[i]; t[i + 1] = k * b * slopes[i]; }
+    }
+    return t;
+  };
+
+  const linePath = (xs, ys) => {
+    const t = monotoneTangents(xs, ys);
+    let d = `M${xs[0].toFixed(1)},${ys[0].toFixed(1)}`;
+    for (let i = 0; i < xs.length - 1; i++) {
+      const third = (xs[i + 1] - xs[i]) / 3;
+      d += ` C${(xs[i] + third).toFixed(1)},${(ys[i] + t[i] * third).toFixed(1)}` +
+        ` ${(xs[i + 1] - third).toFixed(1)},${(ys[i + 1] - t[i + 1] * third).toFixed(1)}` +
+        ` ${xs[i + 1].toFixed(1)},${ys[i + 1].toFixed(1)}`;
+    }
+    return d;
+  };
+
+  const chart = document.getElementById('chart');
+  const svg = chart.querySelector('svg');
+  const [area, line, cross, ring, dot] = ['.area', '.line', '.cross', '.ring', '.dot'].map(q => svg.querySelector(q));
+  const valEl = document.getElementById('ph-val');
+  const changeEl = document.getElementById('ph-change');
+  const captionEl = document.getElementById('ph-caption');
+  const pillsEl = document.getElementById('periods');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const money = v => '$' + v.toFixed(2);
+  const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+  let period = PERIODS[1];
+  let pts = [];
+
+  const spanDays = p => p.days ?? Math.max(1, Math.round((Date.now() - new Date(new Date().getFullYear(), 0, 1)) / 864e5));
+
+  const geometry = () => {
+    const w = chart.clientWidth, h = chart.clientHeight, ys = period.ys, n = ys.length;
+    const min = Math.min(...ys), max = Math.max(...ys), span = (max - min) * HEADROOM, bottom = h - PLOT.bottomGap;
+    pts = ys.map((v, i) => ({
+      v,
+      x: PLOT.left + (i * (w - PLOT.left - PLOT.right)) / (n - 1),
+      y: bottom - ((v - min) / span) * (bottom - PLOT.top),
+    }));
+    const d = linePath(pts.map(p => p.x), pts.map(p => p.y));
+    const last = pts[n - 1];
+    return { d, area: `${d} L${last.x.toFixed(1)},${h} L${pts[0].x.toFixed(1)},${h} Z`, h };
+  };
+
+  const setHeader = (i, scrubbing) => {
+    const first = period.ys[0], v = period.ys[i], diff = v - first, pct = (diff / first) * 100, up = diff >= 0;
+    valEl.textContent = money(v);
+    changeEl.textContent = `${up ? '▲' : '▼'} ${up ? '' : '−'}${money(Math.abs(diff))} (${up ? '+' : '−'}${Math.abs(pct).toFixed(1)}%)`;
+    changeEl.className = up ? 'up' : 'down';
+    if (scrubbing) {
+      const ago = spanDays(period) * (1 - i / (period.ys.length - 1));
+      captionEl.textContent = dateFmt.format(new Date(Date.now() - ago * 864e5));
+    } else captionEl.textContent = period.caption;
+  };
+
+  const placeDot = (p, showRing) => {
+    for (const c of [dot, ring]) { c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); }
+    ring.style.visibility = showRing ? 'visible' : 'hidden';
+  };
+
+  const draw = animate => {
+    const g = geometry();
+    line.setAttribute('d', g.d);
+    area.setAttribute('d', g.area);
+    cross.setAttribute('y2', g.h);
+    const end = pts[pts.length - 1];
+    placeDot(end, !animate);
+    setHeader(pts.length - 1, false);
+    if (!animate || reduced) {
+      clearTimeout(draw.t);
+      Object.assign(line.style, { transition: 'none', strokeDasharray: 'none', strokeDashoffset: 0 });
+      Object.assign(area.style, { transition: 'none', clipPath: 'none' });
+      dot.style.visibility = 'visible';
+      ring.style.visibility = 'visible';
+      return;
+    }
+    // Draw-in: dash the line to its own length, then run the dash off.
+    const len = line.getTotalLength();
+    line.style.transition = 'none';
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+    Object.assign(area.style, { transition: 'none', clipPath: 'inset(0 100% 0 0)' });
+    dot.style.visibility = 'hidden';
+    line.getBoundingClientRect();
+    line.style.transition = `stroke-dashoffset ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
+    line.style.strokeDashoffset = 0;
+    area.style.transition = `clip-path ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
+    area.style.clipPath = 'inset(0 0 0 0)';
+    clearTimeout(draw.t);
+    draw.t = setTimeout(() => { dot.style.visibility = 'visible'; ring.style.visibility = 'visible'; }, DRAW_MS);
+  };
+
+  for (const p of PERIODS) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = p.label;
+    b.setAttribute('aria-pressed', p === period);
+    b.onclick = () => {
+      period = p;
+      for (const el of pillsEl.children) el.setAttribute('aria-pressed', el === b);
+      draw(true);
+    };
+    pillsEl.append(b);
+  }
+
+  const scrub = e => {
+    const x = e.clientX - chart.getBoundingClientRect().left;
+    let i = 0;
+    for (let k = 1; k < pts.length; k++) if (Math.abs(pts[k].x - x) < Math.abs(pts[i].x - x)) i = k;
+    cross.setAttribute('x1', pts[i].x);
+    cross.setAttribute('x2', pts[i].x);
+    cross.setAttribute('visibility', 'visible');
+    placeDot(pts[i], false);
+    setHeader(i, true);
+  };
+  const endScrub = () => {
+    cross.setAttribute('visibility', 'hidden');
+    placeDot(pts[pts.length - 1], true);
+    setHeader(pts.length - 1, false);
+  };
+  chart.addEventListener('pointermove', scrub);
+  chart.addEventListener('pointerdown', scrub);
+  chart.addEventListener('pointerleave', endScrub);
+  chart.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') endScrub(); });
+
+  // Skip the observer's first call, which lands right after the opening draw-in.
+  let observed = false;
+  new ResizeObserver(() => observed ? draw(false) : (observed = true)).observe(chart);
+  draw(true);
+})();
+</script>
 
 </body>
