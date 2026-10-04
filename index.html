@@ -95,7 +95,7 @@
     border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
     text-decoration:none;transition:border-color .15s,transform .15s;
   }
-  .store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}
+  @media (hover:hover){.store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}}
   .store-badge .lines{line-height:1.15;}
   .store-badge .lines .l1{font-size:9px;color:var(--muted);}
   .store-badge .lines .l2{font-size:14.5px;font-weight:500;color:#fff;}
@@ -141,8 +141,10 @@
   .periods button{
     font:inherit;font-size:12px;font-weight:700;color:var(--muted);
     background:none;border:0;border-radius:999px;padding:6px 12px;cursor:pointer;
+    /* transparent border grows the tap area to 41px; the fill stays the app's pill size */
+    border-block:7px solid transparent;background-clip:padding-box;margin-block:-7px;
   }
-  .periods button[aria-pressed="true"]{background:rgba(185,182,233,.15);color:var(--accent);}
+  .periods button[aria-pressed="true"]{background-color:rgba(185,182,233,.15);color:var(--accent);}
   @media (max-width:420px){.periods button{padding:6px 8px;}}
 
   .mock-holdings{margin-top:16px;font-size:13px;color:var(--muted-2);display:flex;flex-wrap:wrap;align-items:center;gap:7px;}
@@ -151,11 +153,11 @@
   .down{color:var(--destructive);}
 
   .legal{
-    padding-bottom:32px;
+    padding-bottom:18px;
     display:flex;flex-wrap:wrap;align-items:center;gap:10px;
     font-size:12px;color:var(--muted-2);
   }
-  .legal a{text-decoration:none;transition:color .15s;}
+  .legal a{text-decoration:none;transition:color .15s;padding-block:14px;}
   .legal a:hover{color:var(--muted);}
   .legal .dot{width:3px;height:3px;border-radius:50%;background:var(--muted-2);}
 </style>
@@ -408,6 +410,7 @@
   chart.addEventListener('pointermove', scrub);
   chart.addEventListener('pointerdown', scrub);
   chart.addEventListener('pointerleave', endScrub);
+  chart.addEventListener('pointercancel', endScrub);
   chart.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') endScrub(); });
 
   // Skip the observer's first call, which lands right after the opening draw-in.
