@@ -109,12 +109,13 @@
     background:linear-gradient(160deg,rgba(185,182,233,.18),transparent 55%),var(--surface);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:24px;
+    padding:20px;
+    width:100%;max-width:420px;justify-self:center;
     box-shadow:0 40px 80px -30px rgba(0,0,0,.65);
   }
   .mock-top{display:flex;align-items:center;justify-content:space-between;}
   .mock-set{font-size:12px;font-weight:500;color:var(--accent);}
-  .mock-name{font-weight:500;font-size:28px;letter-spacing:-.02em;margin-top:6px;}
+  .mock-name{font-weight:500;font-size:24px;letter-spacing:-.02em;margin-top:6px;}
   .mock-condrow{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
   .chip{
     font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;
@@ -122,16 +123,17 @@
   }
   .chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);}
 
-  .ph{margin-top:20px;}
+  .ph{margin-top:16px;}
   .ph-label{font-size:13px;color:var(--muted);font-weight:500;}
-  .ph-val{font-weight:700;font-size:32px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:2px;}
+  .ph-val{font-weight:700;font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:2px;}
   .ph-change{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;margin-top:2px;}
   .ph-caption{color:var(--muted-2);}
-  .chart{position:relative;margin:14px -24px 0;height:160px;touch-action:pan-y;cursor:crosshair;}
+  .chart{position:relative;margin:12px -20px 0;height:120px;touch-action:pan-y;cursor:crosshair;}
   .chart svg{display:block;width:100%;height:100%;overflow:visible;}
   .chart .line{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
   .chart .area{fill:var(--accent);fill-opacity:.06;}
-  .chart .cross{stroke:#fff;stroke-opacity:.35;stroke-dasharray:3 4;}
+  .chart .cross{stroke:#fff;stroke-opacity:.35;stroke-dasharray:3 3;}
+  .chart .grid line{stroke:rgba(255,255,255,.08);}
   .chart .dot{fill:var(--accent);}
   .chart .ring{fill:var(--accent);transform-box:fill-box;transform-origin:center;animation:ring 2s ease-out infinite;}
   @keyframes ring{from{transform:scale(.42);opacity:.5;}to{transform:scale(1);opacity:0;}}
@@ -214,11 +216,23 @@
       </div>
       <div class="chart" id="chart">
         <svg>
-          <path class="area" />
+          <defs>
+            <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#b9b6e9" /></pattern>
+            <linearGradient id="fade-stops" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity=".75" />
+              <stop offset="1" stop-color="#fff" stop-opacity="0" />
+            </linearGradient>
+            <mask id="fade" maskUnits="userSpaceOnUse"><rect class="fade-rect" fill="url(#fade-stops)" /></mask>
+          </defs>
+          <g class="grid"></g>
+          <g class="fill">
+            <path class="area" />
+            <path class="dots" fill="url(#dots)" mask="url(#fade)" />
+          </g>
           <path class="line" />
           <line class="cross" y1="0" visibility="hidden" />
           <circle class="ring" r="12" />
-          <circle class="dot" r="4" />
+          <circle class="dot" r="5" />
         </svg>
       </div>
       <div class="periods" id="periods"></div>
@@ -281,7 +295,7 @@
 
   const chart = document.getElementById('chart');
   const svg = chart.querySelector('svg');
-  const [area, line, cross, ring, dot] = ['.area', '.line', '.cross', '.ring', '.dot'].map(q => svg.querySelector(q));
+  const [fill, area, dots, line, cross, ring, dot, grid, fadeRect] = ['.fill', '.area', '.dots', '.line', '.cross', '.ring', '.dot', '.grid', '.fade-rect'].map(q => svg.querySelector(q));
   const valEl = document.getElementById('ph-val');
   const changeEl = document.getElementById('ph-change');
   const captionEl = document.getElementById('ph-caption');
@@ -305,7 +319,7 @@
     }));
     const d = linePath(pts.map(p => p.x), pts.map(p => p.y));
     const last = pts[n - 1];
-    return { d, area: `${d} L${last.x.toFixed(1)},${h} L${pts[0].x.toFixed(1)},${h} Z`, h };
+    return { d, area: `${d} L${last.x.toFixed(1)},${h} L${pts[0].x.toFixed(1)},${h} Z`, w, h, bottom };
   };
 
   const setHeader = (i, scrubbing) => {
@@ -328,6 +342,13 @@
     const g = geometry();
     line.setAttribute('d', g.d);
     area.setAttribute('d', g.area);
+    dots.setAttribute('d', g.area);
+    fadeRect.setAttribute('width', g.w);
+    fadeRect.setAttribute('height', g.h);
+    // Three dashed gridlines at fixed shares of the plot, plus the solid baseline.
+    grid.innerHTML = [...[0.25, 0.5, 0.75].map(k => g.bottom - k * (g.bottom - PLOT.top)), g.h - 0.5]
+      .map((y, i) => `<line x1="${PLOT.left}" x2="${g.w - PLOT.right + 4}" y1="${y}" y2="${y}"${i < 3 ? ' stroke-dasharray="2 4"' : ''} />`)
+      .join('');
     cross.setAttribute('y2', g.h);
     const end = pts[pts.length - 1];
     placeDot(end, !animate);
@@ -335,7 +356,7 @@
     if (!animate || reduced) {
       clearTimeout(draw.t);
       Object.assign(line.style, { transition: 'none', strokeDasharray: 'none', strokeDashoffset: 0 });
-      Object.assign(area.style, { transition: 'none', clipPath: 'none' });
+      Object.assign(fill.style, { transition: 'none', clipPath: 'none' });
       dot.style.visibility = 'visible';
       ring.style.visibility = 'visible';
       return;
@@ -345,13 +366,13 @@
     line.style.transition = 'none';
     line.style.strokeDasharray = len;
     line.style.strokeDashoffset = len;
-    Object.assign(area.style, { transition: 'none', clipPath: 'inset(0 100% 0 0)' });
+    Object.assign(fill.style, { transition: 'none', clipPath: 'inset(0 100% 0 0)' });
     dot.style.visibility = 'hidden';
     line.getBoundingClientRect();
     line.style.transition = `stroke-dashoffset ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
     line.style.strokeDashoffset = 0;
-    area.style.transition = `clip-path ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
-    area.style.clipPath = 'inset(0 0 0 0)';
+    fill.style.transition = `clip-path ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
+    fill.style.clipPath = 'inset(0 0 0 0)';
     clearTimeout(draw.t);
     draw.t = setTimeout(() => { dot.style.visibility = 'visible'; ring.style.visibility = 'visible'; }, DRAW_MS);
   };
