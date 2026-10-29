@@ -79,13 +79,13 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="effective">Effective 2026-08-29 &middot; Version 1.0</p>
+  <p class="effective">Effective 2026-10-29 &middot; Version 1.1</p>
 
 <p><strong>Who we are.</strong> TCG Portfolio ("the App") is operated by <strong>Oisin McNally</strong>, a sole trader established in Ireland ("we", "us", "our"). We are the <strong>data controller</strong> for the personal data described in this policy.</p>
 <p>Contact / postal address: Oisin McNally, Earlspark, Loughrea, H62 WK79, Co. Galway, Ireland.
 Email: <strong>tcgportfoliodev@gmail.com</strong></p>
 <p><strong>Scope.</strong> This policy explains what personal data we process when you use the App on <strong>iOS or Android</strong>, why, on what legal basis, how long we keep it, who we share it with, and your rights. The App is available worldwide; most of our users are in the US, UK, Canada and the EU/EEA.</p>
-<p><strong>A quick, honest summary.</strong> You need an account to track your portfolio, so we process your email address and login data. The App is free and supported by advertising, so advertising partners may process device and usage data to show you ads. We do not sell your personal data for money. However, showing personalised ads can count as a "sale", "sharing" of personal information, or "targeted advertising" under some US state privacy laws — you can opt out (see section 7). We do not run any social, sharing, messaging or user-content features.</p>
+<p><strong>A quick, honest summary.</strong> You need an account to track your portfolio, so we process your email address and login data. The core App is free and supported by advertising, so advertising partners may process device and usage data to show you ads. If we offer an optional paid subscription and you buy it, we also process your purchase status through our subscription provider (see section 1). We use your portfolio and how you use the App to personalise what it shows you, for example listings from marketplaces such as eBay and TCGplayer for cards missing from your collection. Some links to these marketplaces are affiliate links that may earn us a commission. We do not send marketing emails or newsletters, but we may email a few users one to one to ask for feedback. We do not sell your personal data for money. However, showing personalised ads can count as a "sale", "sharing" of personal information, or "targeted advertising" under some US state privacy laws — you can opt out (see section 7). We do not run any social, sharing, messaging or user-content features.</p>
 <h2>1. What we collect, why, our legal basis, retention and recipients</h2>
 <div class="table-scroll"><table>
 <thead>
@@ -106,11 +106,25 @@ Email: <strong>tcgportfoliodev@gmail.com</strong></p>
 <td>AWS (hosting, including Amazon SES for transactional email), Neon (database)</td>
 </tr>
 <tr>
+<td><strong>Research emails</strong> (your email address and username, how you use the App, a record of when we contacted you, your replies, and notes from any interview you agree to)</td>
+<td>Now and then we email a small number of users one to one to ask for feedback, invite them to an interview, or invite them to test a new feature before release (never to promote any paid feature). We choose who to ask based on how you use the App (for example, how long you have used it, the size of your collection, or the features you use). These emails are <strong>never promotional</strong>, and we do not send marketing emails or newsletters</td>
+<td>Art. 6(1)(f) legitimate interest in learning from the people who use the App, so we can improve it. You can object at any time (see section 6)</td>
+<td>Contact records, replies and interview notes: up to 12 months after our last contact with you, or sooner if you ask. If you ask us not to contact you, we keep your email address on a do-not-contact list while your account exists, so that we respect your request</td>
+<td>Google (Gmail, which we use to send and receive email), and any video-call service we name in an interview invitation</td>
+</tr>
+<tr>
 <td><strong>Portfolio data</strong> (cards you add, quantities, purchase prices/notes you enter)</td>
 <td>Provide the core portfolio-tracking service</td>
 <td>Art. 6(1)(b) contract</td>
 <td>Until you delete the item or your account (30-day backup purge as above)</td>
 <td>AWS, Neon</td>
+</tr>
+<tr>
+<td><strong>Personalised suggestions</strong> (your portfolio data, such as the cards and sets you own, and how you use the App, such as the cards you view or search for)</td>
+<td>Personalise what the App shows you, for example suggesting cards missing from your collection and listings for them from marketplaces such as eBay and TCGplayer</td>
+<td>Art. 6(1)(f) legitimate interest in making the App more useful to you and in earning affiliate commission that helps fund it. You can object at any time (see section 6)</td>
+<td>No separate copy is kept; uses the portfolio and analytics data above, under their retention periods</td>
+<td>AWS, Neon, PostHog. Your portfolio is <strong>not</strong> sent to eBay or TCGplayer (see section 2)</td>
 </tr>
 <tr>
 <td><strong>Server logs</strong> (IP address, request metadata, timestamps, device/OS identifiers in requests)</td>
@@ -128,7 +142,7 @@ Email: <strong>tcgportfoliodev@gmail.com</strong></p>
 </tr>
 <tr>
 <td><strong>Device &amp; usage analytics</strong> (device model/type, OS and version, app version and build, screen dimensions, timezone, screens/actions in the App, your email address and account identifier where you are signed in, and approximate city-level location — GeoIP coordinates estimated from your IP address)</td>
-<td>Understand and improve the App</td>
+<td>Understand and improve the App and decide what to build next; personalise suggestions in the App; choose users to invite to give feedback (see section 2)</td>
 <td>Art. 6(1)(f) legitimate interest in understanding and improving the App. Analytics is <strong>enabled by default</strong>; you can <strong>opt out at any time</strong> in the App's settings</td>
 <td>Event-level data up to 12 months, then deleted or aggregated</td>
 <td>PostHog (hosted in the United States)</td>
@@ -148,31 +162,41 @@ Email: <strong>tcgportfoliodev@gmail.com</strong></p>
 <td>Sentry</td>
 </tr>
 <tr>
-<td><strong>Push notification token</strong></td>
-<td>Deliver push notifications you enable</td>
-<td>Art. 6(1)(a) consent (device permission)</td>
-<td>Until you disable notifications or delete your account</td>
-<td>Expo, Apple (APNs), Google (FCM)</td>
+<td><strong>Push notifications</strong> (push token, your notification settings, and any price alerts you set up)</td>
+<td>Send the notifications you allow, such as price alerts on cards you track and notices about new or changed features. We do not use push notifications for advertising</td>
+<td>Art. 6(1)(a) consent, given through your device's notification permission; you can withdraw it at any time in your device settings. Art. 6(1)(b) contract for price alerts you set up</td>
+<td>Token: until it stops working (for example after you turn notifications off or uninstall the App), or until you delete your account. Price alerts: until you delete them or your account</td>
+<td>Expo, Apple (APNs), Google (FCM), AWS, Neon</td>
 </tr>
 <tr>
 <td><strong>Advertising data</strong> (advertising identifier where permitted, device/ad-interaction data)</td>
 <td>Show ads that fund the free App; personalised ads only with consent</td>
 <td>Art. 6(1)(a) consent (personalised ads / device storage); Art. 6(1)(f) for non-personalised ads</td>
 <td>Controlled by the ad networks per their policies</td>
-<td>Google AdMob, AppLovin, Google Play services</td>
+<td>Google AdMob and its mediation partner Unity Ads (Unity Technologies), Google Play services</td>
+</tr>
+<tr>
+<td><strong>Subscription data</strong>, only if you buy a subscription (whether you have a subscription, the product and price, purchase, renewal, trial, cancellation and refund status, store transaction identifiers, store country and currency, and your account identifier). We do <strong>not</strong> receive your card or payment details; Apple or Google handle payment</td>
+<td>Unlock paid features on your account, restore purchases on your devices, and handle billing questions</td>
+<td>Art. 6(1)(b) contract; Art. 6(1)(c) legal obligation where we must keep records</td>
+<td>While your account exists, then deleted, except records we must keep by law, which we keep only as long as that law requires</td>
+<td>RevenueCat (hosted in the United States), Apple App Store, Google Play</td>
 </tr>
 </tbody>
 </table></div>
 <p>We do <strong>not</strong> use AI/LLM features, card image scanning, OCR, or photo uploads, and we do <strong>not</strong> knowingly process special-category data.</p>
 <h2>2. Advertising, tracking and your choices</h2>
-<p>The App is free and funded by ads served by <strong>Google AdMob</strong> and <strong>AppLovin (MAX)</strong>. For ad personalisation, these companies generally act as <strong>independent controllers</strong> of the data they collect through their SDKs, not merely as our processors.</p>
+<p>The core App is free and funded by ads served by <strong>Google AdMob</strong>. AdMob may fill some ad requests through its mediation partner <strong>Unity Ads</strong> (Unity Technologies), whose software is built into the App. For ad personalisation, Google and Unity generally act as <strong>independent controllers</strong> of the data they collect through their SDKs, not merely as our processors.</p>
 <ul>
-<li><strong>EEA, UK and Switzerland:</strong> before serving personalised ads, we ask for your consent through a <strong>Google-certified Consent Management Platform</strong> using the <strong>IAB Transparency &amp; Consent Framework</strong>. If you do not consent, you will see <strong>non-personalised ads</strong>. You can change your choices at any time in the App's privacy/consent settings.</li>
-<li><strong>Analytics and session recordings:</strong> product analytics (PostHog) is <strong>enabled by default</strong>. It records how you use the App together with your device details (device type, operating system and version, app version, screen dimensions, timezone), your approximate city-level location estimated from your IP address, and, where you are signed in, your email address and account identifier. We also use PostHog <strong>session replay</strong>, which records your interactions with the App's screens — this can include your portfolio contents and estimated values as they appear on screen. Analytics and recordings are used only to understand and improve the App, not for advertising, and are kept for up to 12 months. You can <strong>opt out at any time</strong> in the App's settings, which stops further analytics collection and session recording from your device.</li>
+<li><strong>EEA, UK and Switzerland:</strong> before serving personalised ads, we ask for your consent through a <strong>Google-certified Consent Management Platform</strong> using the <strong>IAB Transparency &amp; Consent Framework</strong>. Your choices also apply to our ad partners, including Unity Ads. If you do not consent, you will see <strong>non-personalised ads</strong>. You can change your choices at any time in the App's privacy/consent settings.</li>
+<li><strong>Analytics and session recordings:</strong> product analytics (PostHog) is <strong>enabled by default</strong>. It records how you use the App together with your device details (device type, operating system and version, app version, screen dimensions, timezone), your approximate city-level location estimated from your IP address, and, where you are signed in, your email address and account identifier. We also use PostHog <strong>session replay</strong>, which records your interactions with the App's screens — this can include your portfolio contents and estimated values as they appear on screen. Analytics and recordings are used to understand and improve the App. Analytics (not session recordings) is also used to personalise suggestions in the App and to choose users to invite to give feedback. Neither is used for advertising, and both are kept for up to 12 months. You can <strong>opt out at any time</strong> in the App's settings, which stops further analytics collection and session recording from your device.</li>
 <li><strong>Apple devices (iOS):</strong> where we or our ad partners would "track" you across other companies' apps and websites, iOS shows Apple's <strong>App Tracking Transparency</strong> prompt; if you decline (or we do not request tracking), you will receive non-personalised ads.</li>
 <li><strong>US states:</strong> you can opt out of the "sale"/"sharing" of personal information and of targeted advertising (see section 7), and we honour the <strong>Global Privacy Control</strong> signal where required.</li>
 </ul>
-<p>Learn more / manage choices: AdMob &amp; Google (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a>); AppLovin (<a href="https://www.applovin.com/privacy/">https://www.applovin.com/privacy/</a>).</p>
+<p>Learn more / manage choices: AdMob &amp; Google (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a>); Unity Ads (<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">https://unity.com/legal/game-player-and-app-user-privacy-policy</a>).</p>
+<p><strong>Emails.</strong> We do <strong>not</strong> send marketing emails or newsletters. We send emails you need for your account (email verification and password reset) and important notices about the App, our Terms or this policy. We may also email a small number of users one to one to ask for feedback, invite them to an interview, or invite them to test a new feature before release (see "Research emails" in section 1). Taking part is optional. These emails never advertise anything, and you can reply "stop" to any of them. Interviews and testing are for adults (18 and over) only, and we record an interview only if you agree at the start.</p>
+<p><strong>Suggestions and affiliate links.</strong> We use your portfolio and how you use the App to personalise what you see, for example listings from marketplaces such as eBay and TCGplayer for cards missing from your collection. These suggestions are not paid ads: no seller pays us to show them. Many links to these marketplaces are affiliate links: if you buy after opening one, we may earn a commission. To find listings, the marketplace receives only a search for the card (such as its name, number and set). A link you open contains that search and our affiliate tracking code, but not your name, email address, account identifier or portfolio. Once you are on their site, the marketplace may use cookies and similar technologies to record that you came from TCG Portfolio, and their own privacy policies apply. Suggestions are made automatically, but they only change which cards and listings you see; we do not make decisions about you that have legal or similarly significant effects. You can object to personalised suggestions at any time (see section 6).</p>
+<p><strong>Push notifications.</strong> We send push notifications only if you allow them when your device asks. We use them for things like price alerts on cards you track and notices about new or changed features, not for advertising. To stop them, turn off notifications for TCG Portfolio in your device settings. This withdraws your consent and does not affect the rest of the App.</p>
 <h2>3. Third parties, sub-processors and business transfers</h2>
 <p>The following organisations process data for or with us. <strong>Better Auth is not a third party</strong> — it is open-source authentication software we self-host on our own AWS infrastructure, with records stored in our Neon database.</p>
 <ul>
@@ -181,21 +205,23 @@ Email: <strong>tcgportfoliodev@gmail.com</strong></p>
 <li><strong>PostHog</strong> — product analytics (processor), hosted in the United States. Privacy: <a href="https://posthog.com/privacy">https://posthog.com/privacy</a> · DPA: <a href="https://posthog.com/dpa">https://posthog.com/dpa</a></li>
 <li><strong>Sentry (Functional Software, Inc.)</strong> — crash/error monitoring (processor). Privacy: <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></li>
 <li><strong>Expo</strong> — app framework, over-the-air updates and push delivery. Privacy: <a href="https://expo.dev/privacy">https://expo.dev/privacy</a></li>
-<li><strong>Google AdMob / Google Play services</strong> — advertising and platform services (independent controller for ad personalisation). Privacy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
-<li><strong>AppLovin</strong> — advertising (independent controller for ad personalisation). Privacy: <a href="https://www.applovin.com/privacy/">https://www.applovin.com/privacy/</a></li>
-<li><strong>Apple</strong> — App Store distribution and APNs push. Privacy: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
-<li><strong>eBay</strong> — third-party price data source. Privacy: <a href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260">https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260</a></li>
-<li><strong>TCGplayer</strong> — third-party price data source. Privacy: <a href="https://help.tcgplayer.com/hc/en-us/articles/11736500567959-TCGplayer-Privacy-Policy">https://help.tcgplayer.com/hc/en-us/articles/11736500567959-TCGplayer-Privacy-Policy</a></li>
+<li><strong>Google AdMob / Google Play services</strong> — advertising, platform services and Google Play billing for in-app purchases (independent controller for ad personalisation and payments). Google also provides Gmail, which we use for support and research emails. Privacy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+<li><strong>Unity Ads (Unity Technologies)</strong> — advertising served through Google AdMob mediation (independent controller for ad personalisation). Privacy: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">https://unity.com/legal/game-player-and-app-user-privacy-policy</a></li>
+<li><strong>RevenueCat</strong> — manages in-app subscriptions and purchase records if you buy a subscription (processor), hosted in the United States. Privacy: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a> · DPA: <a href="https://www.revenuecat.com/dpa">https://www.revenuecat.com/dpa</a></li>
+<li><strong>Apple</strong> — App Store distribution, in-app purchase payments and APNs push. Privacy: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
+<li><strong>eBay</strong> — third-party price data source, source of listings shown in the App, and affiliate programme (eBay Partner Network). eBay receives the link you open from the App, including our affiliate tracking code, and is an independent controller for its own site. Privacy: <a href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260">https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260</a></li>
+<li><strong>TCGplayer</strong> — third-party price data source and affiliate programme. TCGplayer receives the link you open from the App, including our affiliate tracking code, and is an independent controller for its own site. Privacy: <a href="https://help.tcgplayer.com/hc/en-us/articles/11736500567959-TCGplayer-Privacy-Policy">https://help.tcgplayer.com/hc/en-us/articles/11736500567959-TCGplayer-Privacy-Policy</a></li>
 </ul>
 <p><strong>Business transfers.</strong> If the App or our business is transferred to a company we form or control (for example, a limited company incorporated to run TCG Portfolio), or to a successor in a merger, acquisition or sale of assets, your personal data may be transferred to that entity. It will remain subject to this policy (or a successor policy offering at least equivalent protection), and we will notify you of any such transfer.</p>
 <p>We may also disclose data where required by law (for example, a court order), or where necessary to protect our rights, your safety or the safety of others, or to investigate fraud.</p>
 <h2>4. International transfers</h2>
-<p>Some providers are established in the <strong>United States</strong> and may process data outside the EEA/UK. In particular, our analytics provider (<strong>PostHog</strong>) is hosted in the United States, so analytics data — including your email address and account identifier where you are signed in — is processed there. Where data is transferred to the US we rely on the <strong>EU-US Data Privacy Framework</strong> (and the <strong>UK Extension / Swiss-US framework</strong> for UK and Swiss users) where the provider is certified, and on the <strong>European Commission's Standard Contractual Clauses</strong> as a safeguard where it is not. You can ask us for current details of the safeguards used for any provider.</p>
+<p>Some providers are established in the <strong>United States</strong> and may process data outside the EEA/UK. In particular, our analytics provider (<strong>PostHog</strong>) is hosted in the United States, so analytics data — including your email address and account identifier where you are signed in — is processed there. Our subscription provider (<strong>RevenueCat</strong>) is also in the United States, so subscription data is processed there if you buy a subscription. Where data is transferred to the US we rely on the <strong>EU-US Data Privacy Framework</strong> (and the <strong>UK Extension / Swiss-US framework</strong> for UK and Swiss users) where the provider is certified, and on the <strong>European Commission's Standard Contractual Clauses</strong> as a safeguard where it is not. You can ask us for current details of the safeguards used for any provider.</p>
 <h2>5. Data retention</h2>
-<p>We keep account and portfolio data for as long as your account exists. When you <strong>delete your account</strong> (from within the App, via our <a href="delete-account.html">account deletion page</a>, or by emailing us at tcgportfoliodev@gmail.com) we delete your account and portfolio data from our live systems without undue delay and purge them from backups within <strong>30 days</strong>, except where we must keep limited records to comply with law or to resolve disputes or security incidents, which we delete once no longer needed.</p>
+<p>We keep account and portfolio data for as long as your account exists. When you <strong>delete your account</strong> (from within the App, via our <a href="delete-account.html">account deletion page</a>, or by emailing us at tcgportfoliodev@gmail.com) we delete your account and portfolio data from our live systems without undue delay and purge them from backups within <strong>30 days</strong>, except where we must keep limited records to comply with law or to resolve disputes or security incidents, which we delete once no longer needed. Deleting your account does <strong>not</strong> cancel a subscription; cancel it in your App Store or Google Play account settings.</p>
 <p>Residual data collected before deletion — server logs, crash diagnostics, session recordings and event-level analytics — is not individually erased when your account is deleted; it expires automatically under its retention period, which in each case is <strong>up to 12 months</strong>. This means some of this data may persist for <strong>up to 12 months after account deletion</strong>. If you would like it deleted sooner, email <strong>tcgportfoliodev@gmail.com</strong> and we will action your request, subject to any legal obligation to retain it.</p>
 <h2>6. Your GDPR/UK rights</h2>
 <p>You have the right to <strong>access, rectify, erase, restrict, and port</strong> your data, to <strong>object</strong> to processing based on legitimate interests (for analytics, the quickest way is the opt-out toggle in the App's settings), and to <strong>withdraw consent</strong> at any time (without affecting prior processing). To exercise these rights, email <strong>tcgportfoliodev@gmail.com</strong>. You also have the right to lodge a complaint with the <strong>Irish Data Protection Commission</strong> — 21 Fitzwilliam Square South, Dublin 2, D02 RD28, Ireland; info@dataprotection.ie; +353 1 765 0100; www.dataprotection.ie — or with your local supervisory authority. UK users may complain to the <strong>UK ICO</strong> (ico.org.uk).</p>
+<p><strong>Your right to object.</strong> You can object at any time to processing based on our legitimate interests, including analytics, personalised suggestions and research emails. For analytics, use the opt-out in the App's settings. To stop personalised suggestions or research emails, email <strong>tcgportfoliodev@gmail.com</strong>, or reply "stop" to any research email. Because suggestions can include affiliate links to items you could buy, if you object to them we will stop, and you do not need to give a reason.</p>
 <h2>7. US state privacy rights</h2>
 <p>Depending on your state (e.g., California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, Delaware, Iowa, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, Maryland, Indiana, Kentucky, Rhode Island), you may have the right to <strong>access, delete, correct and port</strong> your data, and to <strong>opt out of the "sale" or "sharing" of personal information and of targeted advertising</strong>. Serving personalised ads may be considered a "sale"/"share" under some of these laws. To opt out, use the in-app <strong>"Do Not Sell or Share My Personal Information / Opt out of targeted advertising"</strong> control, decline ad-personalisation consent, or email <strong>tcgportfoliodev@gmail.com</strong>. We honour the <strong>Global Privacy Control (GPC)</strong> signal where required. We do not discriminate against you for exercising these rights.</p>
 <h2>8. Children</h2>
