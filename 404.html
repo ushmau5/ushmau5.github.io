@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Page not found · TCG Portfolio</title>
+<title>Page not found | TCG Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta name="description" content="This page does not exist. Go to the TCG Portfolio homepage or get the app on iOS and Android.">
@@ -12,117 +12,70 @@
 <link rel="apple-touch-icon" href="/logo-512.png">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/google-sans-latin.woff2">
 
-<style>
-  /* Google Sans (SIL OFL 1.1, see /fonts/OFL.txt), variable wght, self-hosted */
-  @font-face{font-family:'Google Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/google-sans-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
-  @font-face{font-family:'Google Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/google-sans-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-  /* tokens copied from index.html */
-  :root{
-    --bg:#0a0a09;
-    --accent:#b9b6e9;
-    --text:#fff;
-    --muted:rgba(255,255,255,.6);
-    --muted-2:rgba(255,255,255,.5);
-    --surface:rgba(64,70,77,.35);
-    --line:rgba(64,70,77,.8);
-    --radius:10px;
-    --gutter:12px;
-    --cta:50px;
-  }
-  *{box-sizing:border-box;}
-  html,body{height:100%;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Google Sans',sans-serif;
-    -webkit-font-smoothing:antialiased;
-    display:flex;flex-direction:column;
-  }
-  a{color:inherit;}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
-  }
-
-  .wrap{max-width:1180px;width:100%;margin:0 auto;padding:0 32px;}
-  @media (max-width:720px){.wrap{padding:0 var(--gutter);}}
-
-  header.wrap{padding-top:28px;}
-  .brand img{width:180px;height:auto;display:block;}
-
-  main.wrap{flex:1;padding-block:72px;}
-  h1{
-    margin:0;text-wrap:balance;
-    font-weight:500;
-    font-size:clamp(40px,5.2vw,68px);
-    line-height:.92;
-    letter-spacing:-.04em;
-  }
-  .sub{margin:22px 0 0;font-size:16px;line-height:1.28;letter-spacing:-.01em;color:var(--muted);max-width:46ch;}
-
-  .store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;}
-  .store-badge{
-    display:flex;align-items:center;gap:9px;height:var(--cta);padding:0 16px;
-    border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
-    text-decoration:none;transition:border-color .15s,transform .15s;
-  }
-  @media (hover:hover){.store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}}
-  .store-badge .lines{line-height:1.15;}
-  .store-badge .lines .l1{font-size:9px;color:var(--muted);}
-  .store-badge .lines .l2{font-size:14.5px;font-weight:500;color:#fff;}
-
-  .pages{list-style:none;margin:40px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 24px;}
-  .pages a{display:inline-block;padding-block:10px;font-size:15px;color:var(--accent);text-decoration:none;}
-  .pages a:hover{text-decoration:underline;}
-
-  .legal{
-    padding-bottom:18px;
-    display:flex;flex-wrap:wrap;align-items:center;gap:10px;
-    font-size:12px;color:var(--muted-2);
-  }
-  .legal a{text-decoration:none;transition:color .15s;padding-block:14px;}
-  .legal a:hover{color:var(--muted);}
-  .legal .dot{width:3px;height:3px;border-radius:50%;background:var(--muted-2);}
-  .legal .disclaimer{flex-basis:100%;margin:0;}
-</style>
+<link rel="stylesheet" href="/styles.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="g-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.3 1.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.8-.9 2-1.4 2.8-1.4zm3.6 16.8c-.5 1.1-1 2-1.8 2.9-1 1.2-2 2.4-3.6 2.4-1.5 0-2-.9-3.7-.9-1.7 0-2.3.9-3.7 1-1.5.1-2.6-1.3-3.6-2.5-1.9-2.4-3.4-6.8-1.4-9.8 1-1.5 2.7-2.4 4.3-2.4 1.6 0 2.6 1 3.9 1 1.3 0 2.1-1 3.9-.9 1.4 0 2.9.7 3.9 2-3.4 1.9-2.8 6.9.3 8.2z"/></symbol><symbol id="g-play" viewBox="0 0 24 24"><path fill="currentColor" d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1L13 12 3.6 2.6zm13.2 6.6L13 12l3.8 2.8 3.8-2.2c.5-.3.8-.9.5-1.5-.1-.2-.3-.4-.5-.5l-3.8-2.4zM3.6 21.4c.3.2.7.2 1 0l12.2-7.1L13 12 3.6 21.4zM3.6 2.6 13 12l3.8-2.8L4.6 2.1c-.3-.2-.7-.2-1 .1z"/></symbol></svg>
 
-<header class="wrap">
-  <a class="brand" href="/"><img src="/logo.svg" alt="TCG Portfolio" width="180" height="24"></a>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="/"><img src="/logo.svg" alt="TCG Portfolio" width="132" height="18"></a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/how-pricing-works">Pricing</a>
+      <a href="/japanese-pokemon-card-prices">Japanese cards</a>
+      <a href="/psa-graded-pokemon-card-prices">PSA prices</a>
+      <a href="/about">About</a>
+    </nav>
+    <a class="pill pill--lav nav-cta" href="/#download">Get the app</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg class="i-open" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 7h14M3 13h14"/></svg>
+      <svg class="i-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </button>
+  </div>
 </header>
 
-<main class="wrap">
-  <h1>Page not found</h1>
-  <p class="sub">The page you were looking for does not exist or has moved.</p>
-  <div class="store-row">
-      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact">
-        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1L13 12 3.6 2.6z"/><path fill="#FBBC04" d="M16.8 9.2 13 12l3.8 2.8 3.8-2.2c.5-.3.8-.9.5-1.5-.1-.2-.3-.4-.5-.5l-3.8-2.4z"/><path fill="#4285F4" d="M3.6 21.4c.3.2.7.2 1 0l12.2-7.1L13 12 3.6 21.4z"/><path fill="#34A853" d="M3.6 2.6 13 12l3.8-2.8L4.6 2.1c-.3-.2-.7-.2-1 .1z"/></svg>
-        <div class="lines"><div class="l1">GET IT ON</div><div class="l2">Google Play</div></div>
-      </a>
-      <a class="store-badge" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M16.3 1.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.8-.9 2-1.4 2.8-1.4zm3.6 16.8c-.5 1.1-1 2-1.8 2.9-1 1.2-2 2.4-3.6 2.4-1.5 0-2-.9-3.7-.9-1.7 0-2.3.9-3.7 1-1.5.1-2.6-1.3-3.6-2.5-1.9-2.4-3.4-6.8-1.4-9.8 1-1.5 2.7-2.4 4.3-2.4 1.6 0 2.6 1 3.9 1 1.3 0 2.1-1 3.9-.9 1.4 0 2.9.7 3.9 2-3.4 1.9-2.8 6.9.3 8.2z"/></svg>
-        <div class="lines"><div class="l1">Download on the</div><div class="l2">App Store</div></div>
-      </a>
+<main id="main">
+<section class="sec opener notfound">
+  <div class="wrap">
+    <h1 class="type-statement reveal">Page not found</h1>
+    <p class="type-sub reveal" style="--d:.1s">The page you were looking for does not exist or has moved.</p>
+    <div class="stores reveal" style="--d:.2s">
+      <a class="pill pill--store" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-apple"/></svg>App Store</a>
+      <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-play"/></svg>Google Play</a>
+    </div>
+    <nav class="reveal" style="--d:.3s" aria-label="Site pages">
+      <ul class="links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/how-pricing-works">How pricing works</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav aria-label="Site pages">
-    <ul class="pages">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/how-pricing-works">How pricing works</a></li>
-      <li><a href="/privacy">Privacy Policy</a></li>
-    </ul>
-  </nav>
+</section>
 </main>
 
-<footer class="wrap legal">
-  <a href="/terms">Terms of Service</a>
-  <span class="dot"></span>
-  <a href="/privacy">Privacy Policy</a>
-  <span class="dot"></span>
-  <a href="/delete-account">Delete Account</a>
-  <p class="disclaimer">Independent app, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company, including PSA. Names are trademarks of their owners.</p>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="nav-logo" href="/"><img src="/logo.svg" alt="TCG Portfolio" width="132" height="18" loading="lazy"></a>
+      <nav class="footer-links" aria-label="Social">
+        <a href="https://www.instagram.com/tcg_portfolio/">Instagram</a>
+        <a href="https://discord.gg/KDzCF89WP8">Discord</a>
+      </nav>
+    </div>
+    <nav class="footer-links" aria-label="Site">
+      <a href="/about">About</a>
+      <a href="/how-pricing-works">How pricing works</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/delete-account">Delete Account</a>
+      <a href="mailto:tcgportfoliodev@gmail.com">Contact</a>
+    </nav>
+    <p class="disclaimer">Independent app, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company, including PSA. eBay, TCGplayer and other names are trademarks of their owners. Price figures are estimates, not financial advice.</p>
+  </div>
 </footer>
 
 </body>

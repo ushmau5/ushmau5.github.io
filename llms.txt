@@ -2,7 +2,7 @@
 
 > TCG Portfolio is a free, ad-supported Pokémon card collection tracker and price checker for iOS and Android, with PSA graded and ungraded estimated values for English and Japanese sets.
 
-Prices are estimates compiled from third-party sources, including eBay and TCGplayer, and may be inaccurate, delayed, incomplete or unavailable. They are not appraisals, offers or guarantees, and the app gives no investment, financial, tax or legal advice. TCG Portfolio is an independent product, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company. Developer: Oisin McNally, trading as TCG Portfolio, Co. Galway, Ireland. Contact: tcgportfoliodev@gmail.com.
+Prices are estimates compiled from third-party sources, including eBay and TCGplayer, and may be inaccurate, delayed, incomplete or unavailable. They are not appraisals, offers or guarantees, and the app gives no investment, financial, tax or legal advice. TCG Portfolio is an independent product, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company. Developer: an independent solo developer in Ireland. Contact: tcgportfoliodev@gmail.com.
 
 ## Main pages
 
