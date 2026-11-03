@@ -4,20 +4,77 @@
 <meta charset="utf-8">
 <title>Terms of Service · TCG Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The terms for using the TCG Portfolio app and website.">
+<meta name="description" content="Terms of Service for the TCG Portfolio app and website: eligibility, accounts, estimated card prices, no financial advice, and the laws of Ireland.">
 <link rel="canonical" href="https://tcgportfolio.io/terms">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TCG Portfolio">
+<meta property="og:title" content="Terms of Service · TCG Portfolio">
+<meta property="og:description" content="Terms of Service for the TCG Portfolio app and website: eligibility, accounts, estimated card prices, no financial advice, and the laws of Ireland.">
+<meta property="og:url" content="https://tcgportfolio.io/terms">
+<meta property="og:image" content="https://tcgportfolio.io/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TCG Portfolio, Pokémon card price tracker">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b10">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo-512.png">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/google-sans-latin.woff2">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://tcgportfolio.io/terms#webpage",
+      "url": "https://tcgportfolio.io/terms",
+      "name": "Terms of Service · TCG Portfolio",
+      "description": "Terms of Service for the TCG Portfolio app and website: eligibility, accounts, estimated card prices, no financial advice, and the laws of Ireland.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://tcgportfolio.io/#website"
+      },
+      "publisher": {
+        "@id": "https://tcgportfolio.io/#org"
+      },
+      "breadcrumb": {
+        "@id": "https://tcgportfolio.io/terms#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://tcgportfolio.io/terms#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tcgportfolio.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms of Service",
+          "item": "https://tcgportfolio.io/terms"
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <style>
+  /* Google Sans (SIL OFL 1.1, see /fonts/OFL.txt), variable wght, self-hosted */
+  @font-face{font-family:'Google Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/google-sans-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:'Google Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/google-sans-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
   :root{
     --bg:#0b0b10;
     --surface:#131319;
     --card-line:#242531;
     --text:#f2f2f0;
     --muted:#a9aab3;
-    --muted-2:#6c6d78;
+    --muted-2:#868791;
     --sky:#4ec8f5;
     --focus:#7dd6ff;
   }
@@ -68,8 +125,10 @@
   th,td{border:1px solid var(--card-line);padding:10px 12px;text-align:left;vertical-align:top;font-size:13.5px;line-height:1.6;color:var(--muted);}
   th{color:var(--text);font-weight:600;background:var(--surface);}
 
-  .back{display:inline-block;margin-top:56px;font-size:13px;color:var(--muted-2);}
-  .back:hover{color:var(--sky);}
+  .site-links{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:4px;margin-top:56px;padding-top:20px;border-top:1px solid var(--card-line);font-size:13px;}
+  .site-links a{color:var(--muted-2);padding-block:10px;}
+  .site-links a:hover{color:var(--sky);}
+  .site-links a[aria-current]{color:var(--text);}
 </style>
 </head>
 <body>
@@ -159,7 +218,16 @@
 <p>We may update these Terms from time to time, for example to reflect new features, legal requirements, or changes to our business. For material changes, we will give you <strong>reasonable advance notice</strong> in the App or by email, and the effective date and version at the top of this page will be updated. If you do not agree with a change, you may stop using the App and delete your account before the change takes effect (if you have a Subscription, also cancel it in your store account settings); continued use after the effective date means you accept the updated Terms. We may also ask you to accept updated Terms in the App before you can keep using it. If you have a Subscription and a change to these Terms would make things materially worse for you, you can end your subscription before the change takes effect, and we will refund the unused part of your current billing period. Changes do not apply retroactively, and previous versions are available on request.</p>
 <h2>21. General</h2>
 <p>If any provision is unenforceable, the rest remains in effect (<strong>severability</strong>). Sections that by their nature should survive termination — including section 5 (as it applies to data collected or copied from the App), and sections 6, 7, 11, 12, 13, 16 and 17 — continue to apply after these Terms end. These Terms, together with the information shown to you before you buy a Subscription, are the <strong>entire agreement</strong> between you and us about the App. Our failure to enforce a term is <strong>not a waiver</strong>. Contact: <strong>tcgportfoliodev@gmail.com</strong>.</p>
-  <a class="back" href="/">&larr; Back to TCG Portfolio</a>
+  <nav class="site-links" aria-label="Site">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/how-pricing-works">How pricing works</a>
+    <a href="/japanese-pokemon-card-prices">Japanese card prices</a>
+    <a href="/psa-graded-pokemon-card-prices">PSA graded prices</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms" aria-current="page">Terms of Service</a>
+    <a href="/delete-account">Delete Account</a>
+  </nav>
 </div>
 </body>
 </html>

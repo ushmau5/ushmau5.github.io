@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How Pokémon Card Prices Are Calculated | TCG Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How TCG Portfolio estimates Pokémon card prices from third-party sources including eBay and TCGplayer, by condition, PSA grade, printing and language.">
+<link rel="canonical" href="https://tcgportfolio.io/how-pricing-works">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TCG Portfolio">
+<meta property="og:title" content="How Pokémon Card Prices Are Calculated | TCG Portfolio">
+<meta property="og:description" content="How TCG Portfolio estimates Pokémon card prices from third-party sources including eBay and TCGplayer, by condition, PSA grade, printing and language.">
+<meta property="og:url" content="https://tcgportfolio.io/how-pricing-works">
+<meta property="og:image" content="https://tcgportfolio.io/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TCG Portfolio, Pokémon card price tracker">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tcgportfolio.io/#website",
+      "url": "https://tcgportfolio.io/",
+      "name": "TCG Portfolio",
+      "inLanguage": "en",
+      "publisher": {"@id": "https://tcgportfolio.io/#org"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://tcgportfolio.io/#org",
+      "name": "TCG Portfolio",
+      "url": "https://tcgportfolio.io/",
+      "logo": "https://tcgportfolio.io/logo-512.png",
+      "email": "tcgportfoliodev@gmail.com"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://tcgportfolio.io/#app",
+      "name": "TCG Portfolio",
+      "alternateName": "TCG Portfolio: Card Tracker",
+      "applicationCategory": "ReferenceApplication",
+      "operatingSystem": "iOS 16.4 or later, Android 7.0 or later",
+      "url": "https://tcgportfolio.io/",
+      "publisher": {"@id": "https://tcgportfolio.io/#org"},
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tcgportfolio.io/how-pricing-works#webpage",
+      "author": {"@id": "https://tcgportfolio.io/about#oisin"},
+      "dateModified": "2026-11-03",
+      "url": "https://tcgportfolio.io/how-pricing-works",
+      "name": "How Pokémon Card Prices Are Calculated | TCG Portfolio",
+      "description": "How TCG Portfolio estimates Pokémon card prices from third-party sources including eBay and TCGplayer, by condition, PSA grade, printing and language.",
+      "inLanguage": "en",
+      "isPartOf": {"@id": "https://tcgportfolio.io/#website"},
+      "about": {"@id": "https://tcgportfolio.io/#app"},
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://tcgportfolio.io/img/raw-condition-prices-shining-charizard.webp",
+        "width": 600,
+        "height": 1304
+      },
+      "breadcrumb": {"@id": "https://tcgportfolio.io/how-pricing-works#breadcrumb"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://tcgportfolio.io/how-pricing-works#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tcgportfolio.io/"},
+        {"@type": "ListItem", "position": 2, "name": "How pricing works", "item": "https://tcgportfolio.io/how-pricing-works"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/google-sans-latin.woff2">
+
+<style>
+  /* Google Sans (SIL OFL 1.1, see /fonts/OFL.txt), variable wght, self-hosted */
+  @font-face{font-family:'Google Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/google-sans-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:'Google Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/google-sans-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+  :root{
+    --bg:#0a0a09;
+    --slate:#40464d;
+    --accent:#b9b6e9;
+    --paper:#f2f2f9;
+    --text:#fff;
+    --muted:rgba(255,255,255,.6);
+    --muted-2:rgba(255,255,255,.5);
+    --surface:rgba(64,70,77,.35);
+    --line:rgba(64,70,77,.8);
+    /* mirrors tcg-portfolio-ui tailwind.config.js */
+    --radius:10px;
+    --gutter:12px;
+    --cta:50px;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Google Sans',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;height:auto;display:block;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media (max-width:720px){.wrap{padding:0 var(--gutter);}}
+
+  header.wrap{padding-top:28px;}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand img{width:180px;height:auto;}
+
+  /* ---------- article ---------- */
+  .page{max-width:760px;padding-block:56px 72px;}
+  .eyebrow{font-size:13px;font-weight:500;letter-spacing:-.01em;color:var(--accent);margin-bottom:18px;}
+  .eyebrow a{text-decoration:none;}
+  .eyebrow a:hover{text-decoration:underline;}
+  h1{
+    text-wrap:balance;margin:0;
+    font-weight:500;font-size:clamp(34px,5vw,56px);line-height:1;letter-spacing:-.04em;
+  }
+  .lede{margin:22px 0 0;font-size:18px;line-height:1.45;letter-spacing:-.01em;color:var(--muted);}
+  .lede strong{color:var(--text);font-weight:500;}
+
+  .sections{display:grid;gap:var(--gutter);margin-top:40px;}
+  .info-item,.store-badge{border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);}
+  .info-item{padding:24px;}
+  @media (max-width:420px){.info-item{padding:20px 16px;}}
+  .info-item h2{margin:0;font-size:20px;font-weight:500;letter-spacing:-.02em;text-wrap:balance;}
+  .info-item p,.info-item li{font-size:15px;line-height:1.5;color:var(--muted);}
+  .info-item p{margin:10px 0 0;}
+  .info-item ul{margin:10px 0 0;padding-left:20px;}
+  .info-item li+li{margin-top:6px;}
+  .info-item strong{color:var(--text);font-weight:500;}
+
+  .shot{margin:20px 0 4px;}
+  .shot img{width:100%;max-width:260px;border-radius:var(--radius);border:1px solid var(--line);}
+  .shot figcaption{margin-top:10px;font-size:13px;line-height:1.4;color:var(--muted-2);}
+
+  /* ---------- download CTA ---------- */
+  .cta{
+    background:linear-gradient(160deg,rgba(185,182,233,.18),transparent 55%),var(--surface);
+  }
+  .store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+  .store-badge{
+    display:flex;align-items:center;gap:9px;height:var(--cta);padding:0 16px;
+    text-decoration:none;transition:border-color .15s,transform .15s;
+  }
+  @media (hover:hover){.store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}}
+  .store-badge .lines{line-height:1.15;}
+  .store-badge .lines .l1{font-size:9px;color:var(--muted);}
+  .store-badge .lines .l2{font-size:14.5px;font-weight:500;color:#fff;}
+
+  .related ul{list-style:none;padding:0;}
+  .related a{color:var(--accent);text-underline-offset:3px;display:inline-block;padding-block:4px;}
+
+  /* ---------- footer ---------- */
+  /* separator belongs to the item after it, so a wrapped line never ends on a lone dot */
+  .legal .links a+a::before{content:"";display:inline-block;vertical-align:middle;border-radius:50%;}
+  .legal{padding-bottom:18px;font-size:12px;color:var(--muted-2);}
+  .legal .links{display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;}
+  .legal a{text-decoration:none;transition:color .15s;padding-block:14px;}
+  .legal a:hover{color:var(--muted);}
+  .legal .links a+a::before{width:3px;height:3px;margin-right:10px;background:var(--muted-2);}
+  .social{display:flex;flex-wrap:wrap;gap:16px;}
+  .social a{display:inline-flex;align-items:center;gap:7px;}
+  .legal p{margin:4px 0 0;line-height:1.45;}
+  .byline{margin:14px 0 0;font-size:14px;line-height:1.5;color:var(--muted);}
+  .byline a{color:inherit;text-decoration:underline;text-underline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav">
+    <a class="brand" href="/"><img src="/logo.svg" alt="TCG Portfolio" width="180" height="24"></a>
+  </nav>
+</header>
+
+<main>
+  <article class="page wrap">
+    <div class="eyebrow"><a href="/">Home</a> / How pricing works</div>
+    <h1>How TCG Portfolio calculates Pokémon card prices</h1>
+    <p class="byline">By <a href="/about">Oisin McNally</a>, developer of TCG Portfolio · Updated <time datetime="2026-11-03">3 November 2026</time></p>
+    <p class="lede"><strong>TCG Portfolio prices are estimates</strong> compiled from third-party sources, including eBay and TCGplayer, and tied to the exact printing, language and condition or PSA grade of each card you own. The app adds those estimates into one collection value and links to eBay sold listings so you can check any number yourself.</p>
+    <div class="store-row">
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1L13 12 3.6 2.6z"/><path fill="#FBBC04" d="M16.8 9.2 13 12l3.8 2.8 3.8-2.2c.5-.3.8-.9.5-1.5-.1-.2-.3-.4-.5-.5l-3.8-2.4z"/><path fill="#4285F4" d="M3.6 21.4c.3.2.7.2 1 0l12.2-7.1L13 12 3.6 21.4z"/><path fill="#34A853" d="M3.6 2.6 13 12l3.8-2.8L4.6 2.1c-.3-.2-.7-.2-1 .1z"/></svg>
+        <div class="lines"><div class="l1">GET IT ON</div><div class="l2">Google Play</div></div>
+      </a>
+      <a class="store-badge" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.3 1.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.8-.9 2-1.4 2.8-1.4zm3.6 16.8c-.5 1.1-1 2-1.8 2.9-1 1.2-2 2.4-3.6 2.4-1.5 0-2-.9-3.7-.9-1.7 0-2.3.9-3.7 1-1.5.1-2.6-1.3-3.6-2.5-1.9-2.4-3.4-6.8-1.4-9.8 1-1.5 2.7-2.4 4.3-2.4 1.6 0 2.6 1 3.9 1 1.3 0 2.1-1 3.9-.9 1.4 0 2.9.7 3.9 2-3.4 1.9-2.8 6.9.3 8.2z"/></svg>
+        <div class="lines"><div class="l1">Download on the</div><div class="l2">App Store</div></div>
+      </a>
+    </div>
+
+    <div class="sections">
+      <section class="info-item">
+        <h2>Where do TCG Portfolio prices come from?</h2>
+        <p>Every price and valuation figure in TCG Portfolio is an estimate compiled from third-party sources, including eBay and TCGplayer. Prices are updated regularly, and new sets and pricing data are added frequently. eBay and TCGplayer are trademarks of their owners; TCG Portfolio is not affiliated with either of them.</p>
+      </section>
+
+      <section class="info-item">
+        <h2>How does TCG Portfolio match a price to your exact card?</h2>
+        <p>The same Pokémon card can be worth very different amounts depending on how it was printed. TCG Portfolio tracks each printing separately, so a 1st Edition holo is never priced as a bulk reverse holo.</p>
+        <ul>
+          <li><strong>Print run:</strong> Unlimited, 1st Edition or Shadowless.</li>
+          <li><strong>Finish:</strong> Normal, Holofoil, Reverse Holofoil or Anniversary Stamp. A printing is shown as print run plus finish, for example “1st Edition · Holofoil”.</li>
+          <li><strong>Language:</strong> English or Japanese. Japanese cards are priced in their own right, not converted from an English equivalent.</li>
+        </ul>
+        <p>If a number looks off, check it against the eBay sold listings linked on the card page.</p>
+      </section>
+
+      <section class="info-item">
+        <h2>How do condition and PSA grade change a TCG Portfolio price?</h2>
+        <p>TCG Portfolio prices every card in one of two condition categories: Ungraded (raw) or PSA graded.</p>
+        <ul>
+          <li><strong>Ungraded:</strong> Near Mint (NM), Lightly Played (LP), Moderately Played (MP), Heavily Played (HP) or Damaged (DMG). New copies default to Near Mint.</li>
+          <li><strong>PSA graded:</strong> PSA 1 (PR) through PSA 10 (GEM-MT), each with its own price. New slabs default to PSA 10.</li>
+        </ul>
+        <p>Comparing grades side by side shows what a PSA 10 fetches against a PSA 9 or 8, and against an ungraded copy, before you buy a slab or submit a raw card. PSA is the only grading company the app prices today.</p>
+        <figure class="shot">
+          <img src="/img/raw-condition-prices-shining-charizard.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Card price page for Shining Charizard (Neo Destiny 107, Unlimited Holofoil) in TCG Portfolio, with an Ungraded/PSA toggle and ungraded prices listed by condition from Near Mint to Damaged">
+          <figcaption>Ungraded estimates by condition for one printing of Shining Charizard.</figcaption>
+        </figure>
+      </section>
+
+      <section class="info-item">
+        <h2>How does TCG Portfolio value your whole collection?</h2>
+        <p>TCG Portfolio estimates a value for the cards you own, raw or graded, where price data is available, and adds the estimates up into a total collection value. Price charts for your portfolio and for each card cover 7D, 1M, 3M, 6M, YTD and 1Y. Values show in US dollars by default, and you can choose a different currency in Settings.</p>
+        <p>You can search cards and check prices without an account. Tracking a portfolio needs a free account, which keeps your collection on any device you sign in on.</p>
+      </section>
+
+      <section class="info-item">
+        <h2>How can you check a TCG Portfolio price yourself?</h2>
+        <p>Each card page in TCG Portfolio has Price, Sold and Buy tabs. The Sold tab links out to eBay sold listings for that card, including its language, and the card page also links to current eBay listings, so you can compare the estimate with recent sales yourself.</p>
+      </section>
+
+      <section class="info-item">
+        <h2>What are the limits of TCG Portfolio prices?</h2>
+        <ul>
+          <li>All figures are <strong>estimates</strong> and may be inaccurate, delayed, incomplete or unavailable.</li>
+          <li>Estimated values are <strong>not appraisals, offers or guarantees</strong> of what any card can be bought or sold for.</li>
+          <li>TCG Portfolio is a personal collection and price-tracking tool, not a financial product. Nothing in it is investment, financial, tax or legal advice, or a recommendation to buy, sell or hold any card. Trading cards are collectibles, not regulated financial instruments.</li>
+        </ul>
+        <p>The full wording is in the <a href="/terms">Terms of Service</a>.</p>
+      </section>
+
+      <section class="info-item cta" aria-labelledby="cta-title">
+        <h2 id="cta-title">Get TCG Portfolio</h2>
+        <p>Free on iOS and Android. Look up a card, pick its printing and condition, and see its estimated price.</p>
+        <div class="store-row">
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1L13 12 3.6 2.6z"/><path fill="#FBBC04" d="M16.8 9.2 13 12l3.8 2.8 3.8-2.2c.5-.3.8-.9.5-1.5-.1-.2-.3-.4-.5-.5l-3.8-2.4z"/><path fill="#4285F4" d="M3.6 21.4c.3.2.7.2 1 0l12.2-7.1L13 12 3.6 21.4z"/><path fill="#34A853" d="M3.6 2.6 13 12l3.8-2.8L4.6 2.1c-.3-.2-.7-.2-1 .1z"/></svg>
+            <div class="lines"><div class="l1">GET IT ON</div><div class="l2">Google Play</div></div>
+          </a>
+          <a class="store-badge" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.3 1.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.8-.9 2-1.4 2.8-1.4zm3.6 16.8c-.5 1.1-1 2-1.8 2.9-1 1.2-2 2.4-3.6 2.4-1.5 0-2-.9-3.7-.9-1.7 0-2.3.9-3.7 1-1.5.1-2.6-1.3-3.6-2.5-1.9-2.4-3.4-6.8-1.4-9.8 1-1.5 2.7-2.4 4.3-2.4 1.6 0 2.6 1 3.9 1 1.3 0 2.1-1 3.9-.9 1.4 0 2.9.7 3.9 2-3.4 1.9-2.8 6.9.3 8.2z"/></svg>
+            <div class="lines"><div class="l1">Download on the</div><div class="l2">App Store</div></div>
+          </a>
+        </div>
+      </section>
+
+      <nav class="info-item related" aria-labelledby="related-title">
+        <h2 id="related-title">Related</h2>
+        <ul>
+          <li><a href="/">TCG Portfolio: Pokémon card price tracker</a></li>
+          <li><a href="/psa-graded-pokemon-card-prices">PSA graded Pokémon card prices</a></li>
+          <li><a href="/japanese-pokemon-card-prices">Japanese Pokémon card prices</a></li>
+          <li><a href="/about">About TCG Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </article>
+</main>
+
+<footer class="wrap legal">
+  <nav class="links" aria-label="Site">
+    <a href="/about">About</a>
+    <a href="/how-pricing-works">How pricing works</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/delete-account">Delete Account</a>
+    <a href="mailto:tcgportfoliodev@gmail.com">Contact</a>
+  </nav>
+  <div class="social">
+    <a href="https://www.instagram.com/tcg_portfolio/">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset="0.35" stop-color="#D62976"/><stop offset="0.65" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="url(#igGrad)" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="url(#igGrad)" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="#D62976"/></svg>
+      Instagram
+    </a>
+    <a href="https://discord.gg/KDzCF89WP8">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="#5865F2" aria-hidden="true"><path d="M20 6.5a17.6 17.6 0 0 0-4.3-1.3l-.2.4c1.5.4 2.9 1 4.1 1.8-1.8-.9-3.7-1.5-5.6-1.7a13 13 0 0 0-4 0c-1.9.2-3.8.8-5.6 1.7 1.2-.9 2.7-1.5 4.2-1.8l-.2-.4A17.6 17.6 0 0 0 4 6.5C2.4 9 1.6 11.9 1.9 14.8c1.6 1.2 3.4 2 5.3 2.5l.6-1c-.9-.3-1.7-.7-2.5-1.2.2.1.4.3.7.4 3.2 1.5 6.9 1.5 10 0l.7-.4c-.8.5-1.6.9-2.5 1.2l.6 1c1.9-.5 3.7-1.3 5.3-2.5.4-3.4-.5-6.3-2-8.3zM9 13.4c-.7 0-1.3-.7-1.3-1.5S8.3 10.4 9 10.4s1.3.6 1.3 1.5-.6 1.5-1.3 1.5zm6 0c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5 1.3.6 1.3 1.5-.6 1.5-1.3 1.5z"/></svg>
+      Discord
+    </a>
+  </div>
+  <p class="disclaimer">Independent app, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company, including PSA. eBay, TCGplayer and other names are trademarks of their owners. Price figures are estimates, not financial advice.</p>
+</footer>
+
+</body>
+</html>

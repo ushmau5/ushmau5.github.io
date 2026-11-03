@@ -1,4 +1,17 @@
+# robots.txt for https://tcgportfolio.io
+# Every page on this site is public. All crawlers may crawl everything.
+# AI search and answer bots are named below so the policy is explicit:
+# they may crawl the site to cite and link it in answers.
+
 User-agent: *
+Allow: /
+
+# AI search / answer bots (explicitly allowed)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 Allow: /
 
 Sitemap: https://tcgportfolio.io/sitemap.xml

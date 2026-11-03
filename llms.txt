@@ -1,0 +1,24 @@
+# TCG Portfolio
+
+> TCG Portfolio is a free, ad-supported Pokémon card collection tracker and price checker for iOS and Android, with PSA graded and ungraded estimated values for English and Japanese sets.
+
+Prices are estimates compiled from third-party sources, including eBay and TCGplayer, and may be inaccurate, delayed, incomplete or unavailable. They are not appraisals, offers or guarantees, and the app gives no investment, financial, tax or legal advice. TCG Portfolio is an independent product, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company. Developer: Oisin McNally, trading as TCG Portfolio, Co. Galway, Ireland. Contact: tcgportfoliodev@gmail.com.
+
+## Main pages
+
+- [Home](https://tcgportfolio.io/): What the app does and where to download it on the App Store and Google Play.
+- [About](https://tcgportfolio.io/about): Who makes TCG Portfolio and what it is for.
+- [How pricing works](https://tcgportfolio.io/how-pricing-works): Where the estimated prices come from and how to check them against eBay sold listings.
+- [Japanese Pokémon card prices](https://tcgportfolio.io/japanese-pokemon-card-prices): Japanese sets priced in their own right, with the same variant and condition detail as English sets.
+- [PSA graded Pokémon card prices](https://tcgportfolio.io/psa-graded-pokemon-card-prices): Estimated values for PSA grades 1 to 10 next to ungraded prices.
+
+## Apps
+
+- [TCG Portfolio on the App Store](https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394): iOS app, iOS 16.4 or later.
+- [TCG Portfolio on Google Play](https://play.google.com/store/apps/details?id=com.tcgportfolioreact): Android app, Android 7.0 or later.
+
+## Legal
+
+- [Terms of Service](https://tcgportfolio.io/terms): Terms for using the app and website.
+- [Privacy Policy](https://tcgportfolio.io/privacy): How TCG Portfolio collects, uses and protects your data.
+- [Delete your account](https://tcgportfolio.io/delete-account): How to delete your account and data.
