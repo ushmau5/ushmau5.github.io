@@ -2,465 +2,395 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>TCG Portfolio – Pokémon Card Price Tracker &amp; Collection App</title>
+<title>TCG Portfolio: Pokémon Card Price Tracker &amp; Collection App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Track your Pokémon card collection with raw and PSA graded prices from multiple marketplaces. English and Japanese cards. Free on iOS and Android.">
+<meta name="description" content="Free Pokémon card price tracker for iOS and Android. Track estimated ungraded and PSA graded values for English and Japanese cards in one collection.">
 <link rel="canonical" href="https://tcgportfolio.io/">
+<meta name="theme-color" content="#0a0a09">
+<meta name="apple-itunes-app" content="app-id=1601696394">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TCG Portfolio">
-<meta property="og:title" content="TCG Portfolio – Pokémon Card Price Tracker &amp; Collection App">
-<meta property="og:description" content="Track your Pokémon card collection with raw and PSA graded prices from multiple marketplaces. English and Japanese cards. Free on iOS and Android.">
+<meta property="og:title" content="TCG Portfolio: Pokémon Card Price Tracker &amp; Collection App">
+<meta property="og:description" content="Free Pokémon card price tracker for iOS and Android. Track estimated ungraded and PSA graded values for English and Japanese cards in one collection.">
 <meta property="og:url" content="https://tcgportfolio.io/">
 <meta property="og:image" content="https://tcgportfolio.io/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TCG Portfolio, a Pokémon card price tracker app for iOS and Android">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="favicon.png" type="image/png">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="twitter:title" content="TCG Portfolio: Pokémon Card Price Tracker &amp; Collection App">
+<meta name="twitter:description" content="Free Pokémon card price tracker for iOS and Android. Track estimated ungraded and PSA graded values for English and Japanese cards in one collection.">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo-512.png">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/google-sans-latin.woff2">
+<link rel="preload" as="image" type="image/webp" href="/img/cards/charizard-boundaries-crossed-20.webp" fetchpriority="high">
+<link rel="stylesheet" href="/styles.css">
+<script src="/site.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MobileApplication",
+      "@type": "Organization",
+      "@id": "https://tcgportfolio.io/#org",
       "name": "TCG Portfolio",
-      "description": "Pokémon card price tracker and collection app with raw and PSA graded prices.",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "iOS, Android",
+      "url": "https://tcgportfolio.io/",
+      "logo": "https://tcgportfolio.io/logo-512.png",
+      "email": "tcgportfoliodev@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/tcg_portfolio/",
+        "https://discord.gg/KDzCF89WP8",
+        "https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394",
+        "https://play.google.com/store/apps/details?id=com.tcgportfolioreact"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://tcgportfolio.io/#website",
+      "url": "https://tcgportfolio.io/",
+      "name": "TCG Portfolio",
+      "inLanguage": "en",
+      "publisher": {"@id": "https://tcgportfolio.io/#org"}
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://tcgportfolio.io/#app",
+      "name": "TCG Portfolio",
+      "alternateName": "TCG Portfolio: Card Tracker",
+      "description": "Pokémon card collection tracker and price checker with estimated ungraded and PSA graded values for English and Japanese sets.",
+      "applicationCategory": "ReferenceApplication",
+      "operatingSystem": "iOS 16.4 or later, Android 7.0 or later",
       "url": "https://tcgportfolio.io/",
       "downloadUrl": [
         "https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394",
         "https://play.google.com/store/apps/details?id=com.tcgportfolioreact"
       ],
+      "installUrl": [
+        "https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394",
+        "https://play.google.com/store/apps/details?id=com.tcgportfolioreact"
+      ],
+      "image": "https://tcgportfolio.io/logo-512.png",
+      "screenshot": [
+        {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/card-details-charizard.webp", "width": 700, "height": 1450, "caption": "TCG Portfolio card page for Charizard from Boundaries Crossed (20), showing the card art and sample Near Mint and PSA 10 to PSA 5 prices"},
+        {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/card-price-chart-charizard.webp", "width": 700, "height": 1450, "caption": "TCG Portfolio market price chart for Charizard, Boundaries Crossed 20, showing a sample one-month Near Mint price trend of $52.68"},
+        {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/portfolio-value-sample.webp", "width": 700, "height": 1450, "caption": "TCG Portfolio portfolio screen with a sample total value of $12,486, a seven-day value chart and graded and ungraded cards in the collection"},
+        {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/japanese-set-cards-grid-home.webp", "width": 700, "height": 1450, "caption": "Japanese set VSTAR Universe in TCG Portfolio, a grid of cards 001 to 006 with sample Near Mint prices"},
+        {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/card-details-radiant-charizard-japanese.webp", "width": 700, "height": 1450, "caption": "TCG Portfolio card page for Radiant Charizard, VSTAR Universe 015, with sample Near Mint and PSA 10 to PSA 5 prices and a one-month chart"},
+        {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/psa-graded-prices-tiles.webp", "width": 700, "height": 1450, "caption": "TCG Portfolio card page for Charizard, Boundaries Crossed 20, with the PSA 10 tile selected and a sample market price of $7,412"}
+      ],
+      "publisher": {"@id": "https://tcgportfolio.io/#org"},
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
     },
     {
-      "@type": "Organization",
-      "name": "TCG Portfolio",
+      "@type": "WebPage",
+      "@id": "https://tcgportfolio.io/#webpage",
+      "author": {"@id": "https://tcgportfolio.io/#org"},
+      "dateModified": "2026-11-03",
       "url": "https://tcgportfolio.io/",
-      "logo": "https://tcgportfolio.io/logo-512.png",
-      "sameAs": [
-        "https://www.instagram.com/tcg_portfolio/",
-        "https://discord.gg/KDzCF89WP8"
-      ]
+      "name": "TCG Portfolio: Pokémon Card Price Tracker & Collection App",
+      "description": "Free Pokémon card price tracker for iOS and Android. Track estimated ungraded and PSA graded values for English and Japanese cards in one collection.",
+      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://tcgportfolio.io/img/screens/portfolio-value-sample.webp", "width": 700, "height": 1450},
+      "inLanguage": "en",
+      "isPartOf": {"@id": "https://tcgportfolio.io/#website"},
+      "about": {"@id": "https://tcgportfolio.io/#app"}
     }
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg:#0a0a09;
-    --slate:#40464d;
-    --accent:#b9b6e9;
-    --paper:#f2f2f9;
-    --text:#fff;
-    --muted:rgba(255,255,255,.6);
-    --muted-2:rgba(255,255,255,.4);
-    --surface:rgba(64,70,77,.35);
-    --line:rgba(64,70,77,.8);
-    --success:hsl(124 60% 60%);
-    --destructive:hsl(0 84% 60%);
-    /* mirrors tcg-portfolio-ui tailwind.config.js */
-    --radius:10px;
-    --gutter:12px;
-    --cta:50px;
-  }
-
-  *{box-sizing:border-box;}
-  html,body{height:100%;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Google Sans',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  h1{text-wrap:balance;margin:0;}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
-  }
-
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-  @media (max-width:720px){.wrap{padding:0 var(--gutter);}}
-
-  /* ---------- header ---------- */
-  header.wrap{padding-top:28px;}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .brand img{width:180px;height:auto;}
-
-  /* ---------- hero ---------- */
-  .hero{
-    min-height:calc(100vh - 86px);
-    padding-block:64px 84px;
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:56px;
-    align-items:center;
-  }
-  @media (max-width:900px){
-    .hero{grid-template-columns:minmax(0,1fr);padding-block:40px 60px;gap:48px;}
-  }
-  .eyebrow{
-    font-size:13px;font-weight:500;letter-spacing:-.01em;
-    color:var(--accent);margin-bottom:22px;
-  }
-  h1{
-    font-weight:500;
-    font-size:clamp(44px,6.4vw,84px);
-    line-height:.92;
-    letter-spacing:-.04em;
-  }
-  .tagline{
-    margin:18px 0 0;
-    font-size:clamp(22px,2.4vw,28px);
-    font-weight:500;
-    line-height:1;
-    letter-spacing:-.02em;
-    color:var(--accent);
-  }
-  .sub{
-    margin-top:22px;
-    font-size:16px;
-    line-height:1.28;
-    letter-spacing:-.01em;
-    color:var(--muted);
-    max-width:46ch;
-  }
-  .store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;}
-  .store-badge{
-    display:flex;align-items:center;gap:9px;height:var(--cta);padding:0 16px;
-    border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
-    text-decoration:none;transition:border-color .15s,transform .15s;
-  }
-  @media (hover:hover){.store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}}
-  .store-badge .lines{line-height:1.15;}
-  .store-badge .lines .l1{font-size:9px;color:var(--muted);}
-  .store-badge .lines .l2{font-size:14.5px;font-weight:500;color:#fff;}
-  .store-badge .label{font-size:14px;font-weight:500;color:#fff;}
-
-  .trust-row{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13px;color:var(--muted-2);}
-  .trust-row .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);}
-
-  /* ---------- hero mock card ---------- */
-  .mock{
-    background:linear-gradient(160deg,rgba(185,182,233,.18),transparent 55%),var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:20px;
-    width:100%;max-width:420px;justify-self:center;
-    box-shadow:0 40px 80px -30px rgba(0,0,0,.65);
-  }
-  .mock-top{display:flex;align-items:center;justify-content:space-between;}
-  .mock-set{font-size:12px;font-weight:500;color:var(--accent);}
-  .mock-name{font-weight:500;font-size:24px;letter-spacing:-.02em;margin-top:6px;}
-  .mock-condrow{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
-  .chip{
-    font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;
-    background:transparent;color:var(--muted);border:1px solid var(--line);
-  }
-  .chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);}
-
-  .ph{margin-top:16px;}
-  .ph-label{font-size:13px;color:var(--muted);font-weight:500;}
-  .ph-val{font-weight:700;font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:2px;}
-  .ph-change{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;margin-top:2px;}
-  .ph-caption{color:var(--muted-2);}
-  .chart{position:relative;margin:12px -20px 0;height:120px;touch-action:pan-y;cursor:crosshair;}
-  .chart svg{display:block;width:100%;height:100%;overflow:visible;}
-  .chart .line{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
-  .chart .area{fill:var(--accent);fill-opacity:.06;}
-  .chart .cross{stroke:#fff;stroke-opacity:.35;stroke-dasharray:3 3;}
-  .chart .grid line{stroke:rgba(255,255,255,.08);}
-  .chart .dot{fill:var(--accent);}
-  .chart .ring{fill:var(--accent);transform-box:fill-box;transform-origin:center;animation:ring 2s ease-out infinite;}
-  @keyframes ring{from{transform:scale(.42);opacity:.5;}to{transform:scale(1);opacity:0;}}
-  .periods{display:flex;justify-content:space-between;margin-top:12px;}
-  .periods button{
-    font:inherit;font-size:12px;font-weight:700;color:var(--muted);
-    background:none;border:0;border-radius:999px;padding:6px 12px;cursor:pointer;
-    /* transparent border grows the tap area to 41px; the fill stays the app's pill size */
-    border-block:7px solid transparent;background-clip:padding-box;margin-block:-7px;
-  }
-  .periods button[aria-pressed="true"]{background-color:rgba(185,182,233,.15);color:var(--accent);}
-  @media (max-width:420px){.periods button{padding:6px 8px;}}
-
-  .mock-holdings{margin-top:16px;font-size:13px;color:var(--muted-2);display:flex;flex-wrap:wrap;align-items:center;gap:7px;}
-  .mock-holdings b{color:var(--muted);font-weight:500;}
-  .up{color:var(--success);}
-  .down{color:var(--destructive);}
-
-  .legal{
-    padding-bottom:18px;
-    display:flex;flex-wrap:wrap;align-items:center;gap:10px;
-    font-size:12px;color:var(--muted-2);
-  }
-  .legal a{text-decoration:none;transition:color .15s;padding-block:14px;}
-  .legal a:hover{color:var(--muted);}
-  .legal .dot{width:3px;height:3px;border-radius:50%;background:var(--muted-2);}
-</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="g-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.3 1.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.8-.9 2-1.4 2.8-1.4zm3.6 16.8c-.5 1.1-1 2-1.8 2.9-1 1.2-2 2.4-3.6 2.4-1.5 0-2-.9-3.7-.9-1.7 0-2.3.9-3.7 1-1.5.1-2.6-1.3-3.6-2.5-1.9-2.4-3.4-6.8-1.4-9.8 1-1.5 2.7-2.4 4.3-2.4 1.6 0 2.6 1 3.9 1 1.3 0 2.1-1 3.9-.9 1.4 0 2.9.7 3.9 2-3.4 1.9-2.8 6.9.3 8.2z"/></symbol><symbol id="g-play" viewBox="0 0 24 24"><path fill="currentColor" d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1L13 12 3.6 2.6zm13.2 6.6L13 12l3.8 2.8 3.8-2.2c.5-.3.8-.9.5-1.5-.1-.2-.3-.4-.5-.5l-3.8-2.4zM3.6 21.4c.3.2.7.2 1 0l12.2-7.1L13 12 3.6 21.4zM3.6 2.6 13 12l3.8-2.8L4.6 2.1c-.3-.2-.7-.2-1 .1z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-add-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M248 105Q248 105 248 105Q253 101 259.5 102.5Q266 104 270 110Q270 110 272 113V179V246H338H404L408 248Q416 253 416.0 262.0Q416 271 408 276Q408 276 405 278H339H272V345V411L270 414Q265 422 256.0 422.0Q247 422 242 414Q242 414 240 411V345V278H173H107L104 276Q96 271 96.0 262.0Q96 253 103 249Q103 249 107 246H173H240V179V113L242 110Q244 107 248 105Z"/></symbol>
+<symbol id="i-albums-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M140 71Q141 70 257 70H374L377 73Q383 78 384 84Q385 98 371 101Q367 102 256.0 102.0Q145 102 141 101Q129 99 128.5 87.0Q128 75 140 71ZM108 118Q111 118 257 118H404L408 120Q416 125 416.0 134.0Q416 143 408 148L405 150H256H107L104 148Q91 140 98 126Q101 120 108 118ZM80 168Q85 167 255.5 166.5Q426 166 431 168Q443 171 452.0 181.0Q461 191 463 203Q464 208 464 310Q464 394 463.5 408.0Q463 422 459 429Q453 443 439 450Q433 452 429 453Q424 454 256.0 454.0Q88 454 83 453Q79 452 73 450Q59 443 53 429Q49 422 48.5 408.0Q48 394 48 310Q48 208 49 203Q51 191 60.0 181.0Q69 171 80 168ZM425 200Q425 200 425 200Q422 198 256.0 198.0Q90 198 87.0 199.5Q84 201 82.5 203.5Q81 206 80 309Q80 309 80 413L82 416Q84 418 86 420Q86 420 89 422H256H423L426 420Q428 418 430 416Q430 416 432 413V309Q431 206 429.5 203.5Q428 201 425 200Z"/></symbol>
+<symbol id="i-albums" viewBox="0 6 512 512"><path fill="currentColor" d="M138 72Q141 70 256.0 70.0Q371 70 374 72Q385 76 384.0 87.5Q383 99 371 101Q367 102 256.0 102.0Q145 102 141 101Q129 99 128.0 87.5Q127 76 138 72ZM109 119Q111 118 258 118H404L408 120Q416 125 416.0 134.5Q416 144 407 148L404 150H256H108L105 148Q101 146 99 142Q94 135 97.5 128.0Q101 121 109 119ZM79 168Q79 168 79 168L85 166H256H427L433 168Q456 176 463 200Q464 207 464.0 309.5Q464 412 463 417Q461 431 450 441Q441 450 429 453Q423 454 256.0 454.0Q89 454 83 453Q71 450 62 441Q51 431 49 417Q48 412 48.0 309.5Q48 207 49 200Q56 176 79 168Z"/></symbol>
+<symbol id="i-arrow-back-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M238 95Q238 95 238 95Q246 93 255 97Q263 101 266.0 109.0Q269 117 267 126Q265 130 211 184Q211 184 157 238H288L419 239L423 241Q431 245 434 254Q437 262 434 270Q431 279 423 283Q423 283 419 285L289 286Q159 286 159.0 286.5Q159 287 212.0 340.5Q265 394 267 398Q272 414 259 424Q252 430 244 430Q241 430 236.0 428.0Q231 426 156.0 351.5Q81 277 79 273Q74 264 78 254Q80 249 154.0 174.5Q228 100 231.0 98.0Q234 96 238 95Z"/></symbol>
+<symbol id="i-chevron-back-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M322 95Q322 95 322 95Q329 93 337.0 96.5Q345 100 349 107Q355 118 349 129Q348 132 283 197Q283 197 218 262L283 327Q348 392 349 395Q353 402 351 410Q350 419 342.5 425.0Q335 431 326 430Q319 429 309.0 420.0Q299 411 239 351Q178 290 169.0 280.0Q160 270 160.0 262.0Q160 254 168.5 244.5Q177 235 237 175Q309 102 313.5 99.0Q318 96 322 95Z"/></symbol>
+<symbol id="i-ellipsis-horizontal" viewBox="0 6 512 512"><path fill="currentColor" d="M84 216Q97 212 111 216Q127 221 137 237Q153 262 137 287Q122 310 96 310Q70 310 55.5 287.5Q41 265 53 241Q63 221 84 216ZM246 215Q259 212 272 217Q297 226 302.5 251.5Q308 277 290 296Q275 310 256.0 310.0Q237 310 222.5 296.0Q208 282 208 262Q208 245 219.0 232.0Q230 219 246 215ZM404 216Q404 216 404 216Q417 212 431 216Q447 221 457 237Q473 262 457 287Q442 310 416 310Q390 310 375.5 287.5Q361 265 373 241Q383 221 404 216Z"/></symbol>
+<symbol id="i-eye-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M230 104Q263 100 299 106Q352 116 401.5 151.0Q451 186 486 238Q495 251 495 262Q495 270 492 277Q485 290 466.0 313.0Q447 336 430 351Q361 412 280 421Q271 422 255.5 422.0Q240 422 231 421Q146 411 77 347Q48 320 26 286Q16 272 16 261Q17 250 30 233Q48 208 69 188Q106 151 146 130Q187 109 230 104ZM271 135Q220 131 171 153Q129 173 91 211Q72 230 55 252L48 262L52 269Q98 336 162 367Q180 376 196 381Q246 396 297 386Q378 369 440 295Q463 267 463 262Q463 260 451 244Q415 196 368.0 167.5Q321 139 271 135ZM241 167Q244 167 258.5 167.0Q273 167 281 169Q309 177 329 199Q346 219 351 247Q354 263 350 279Q345 309 324.0 330.0Q303 351 273 356Q257 360 241 357Q205 351 182.5 324.0Q160 297 160 262Q160 239 170 220Q192 176 241 167ZM274 201Q274 201 274 201Q259 196 245 199Q227 202 213.5 214.0Q200 226 195 244Q193 250 193.0 262.0Q193 274 195 280Q205 313 238 324Q256 329 274 324Q307 313 317 280Q319 274 319.0 262.0Q319 250 317 244Q307 210 274 201Z"/></symbol>
+<symbol id="i-funnel-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M41 55Q45 54 255.5 54.0Q466 54 470 55Q486 57 493 71Q495 76 495.0 84.0Q495 92 493.0 96.5Q491 101 405 201L320 300V376V453L317 457Q311 469 298 470Q294 470 249.5 455.5Q205 441 202 439Q195 434 193 426Q192 423 192 361V300L107 201Q21 101 19.0 96.5Q17 92 17.0 84.0Q17 76 19 71Q26 57 41 55ZM460 87Q460 87 460 87H452Q443 87 419.0 86.5Q395 86 357.0 86.0Q319 86 256.0 86.0Q193 86 155.0 86.0Q117 86 93.0 86.5Q69 87 60.5 87.0Q52 87 52 87Q52 88 132.0 181.0Q212 274 216.0 279.0Q220 284 222 289Q222 289 224 294V354L225 414L255 424Q286 434 286.5 434.0Q287 434 288 364Q288 364 288 294L290 289Q292 284 295.5 279.5Q299 275 379.5 181.5Q460 88 460 87Z"/></symbol>
+<symbol id="i-layers-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M246 55Q269 53 286 59Q292 61 369.0 96.0Q446 131 449 134Q464 144 463.5 159.5Q463 175 448 184Q443 186 417.5 198.0Q392 210 392.0 210.5Q392 211 419.0 223.0Q446 235 449 237Q471 252 462 273Q458 281 448 287Q445 290 419.5 301.5Q394 313 394.0 313.5Q394 314 421.0 327.5Q448 341 452 344Q470 359 462 377Q458 385 448 392Q446 393 373.0 426.5Q300 460 291 464Q261 476 229 466Q223 465 146.0 430.0Q69 395 64 392Q55 386 51 376Q46 366 50.5 355.5Q55 345 67 339Q72 336 96.5 325.5Q121 315 121.0 314.5Q121 314 118.5 313.0Q116 312 112.0 310.5Q108 309 103 306Q64 288 58 283Q53 278 51 273Q44 259 54 245Q60 238 94 223Q101 219 107.5 216.5Q114 214 117.5 212.0Q121 210 121.0 210.0Q121 210 97 199Q64 184 58 179Q50 172 49 163Q45 146 62 134Q67 131 144.5 95.5Q222 60 225 59Q234 56 246 55ZM270 87Q256 84 242 87Q237 89 161.5 123.0Q86 157 85 158Q85 158 90.0 160.5Q95 163 104.0 167.0Q113 171 123 176Q163 194 169 197Q229 225 237 227Q254 233 274 228Q281 226 340 198Q344 196 383.5 178.5Q423 161 426 159L428 158L423 156Q419 154 347.5 121.5Q276 89 270 87ZM164 230 160 228 123 245Q86 261 85 262L162 298Q173 303 203 317Q233 330 240 332Q256 336 272 332Q281 330 345 300Q351 297 389 280Q400 275 408.5 271.0Q417 267 422.0 264.5Q427 262 427 262Q426 261 389.5 244.5Q353 228 352.0 228.0Q351 228 321.0 242.0Q291 256 285 258Q255 267 226 257Q220 255 194.0 243.5Q168 232 164 230ZM391 348Q391 348 391 348Q355 331 354.5 331.0Q354 331 323.5 345.0Q293 359 286 361Q256 372 225 361Q218 359 189.5 345.5Q161 332 160 333Q159 333 122.5 349.0Q86 365 85 366Q85 366 120.5 382.5Q156 399 193.5 416.0Q231 433 236 435Q242 437 256.0 437.0Q270 437 275 436Q279 434 317.0 417.0Q355 400 391.0 383.0Q427 366 427 366Q426 365 391 348Z"/></symbol>
+<symbol id="i-layers" viewBox="0 6 512 512"><path fill="currentColor" d="M248 54Q265 53 282 58Q290 60 367.5 95.5Q445 131 450 135Q465 145 464.0 159.5Q463 174 448 184Q444 186 368.5 220.5Q293 255 287 257Q274 262 256.0 262.0Q238 262 225 257Q219 255 143.5 220.5Q68 186 64 184Q49 174 48.0 159.5Q47 145 62 135Q67 131 145.0 95.5Q223 60 228 58Q236 56 248 54ZM76 230Q85 226 85.5 226.0Q86 226 152.5 256.5Q219 287 225 289Q238 294 255 294Q270 294 281 291Q289 289 369 252L426 226L435 230Q450 237 456 244Q464 252 464 262Q464 277 449 287Q446 289 369.0 324.0Q292 359 286 361Q256 372 226 361Q219 359 142.5 324.0Q66 289 63 287Q48 277 48 262Q48 243 76 230ZM76 334Q76 334 76 334Q85 330 85.5 330.0Q86 330 154.5 361.5Q223 393 231.0 395.0Q239 397 256.0 397.0Q273 397 281.0 395.0Q289 393 358 361Q358 361 426 330L435 334Q450 340 456 348Q467 359 463.5 372.0Q460 385 444 394Q433 400 360.5 432.5Q288 465 283 466Q256 474 229 466Q224 465 147.0 430.0Q70 395 65 392Q51 384 48.5 371.0Q46 358 56 348Q62 341 76 334Z"/></symbol>
+<symbol id="i-pricetag-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M304 39Q306 38 374.5 38.5Q443 39 446 39Q457 42 466.0 50.5Q475 59 478 70Q480 75 480 138Q481 211 477 219Q475 223 349.0 349.0Q223 475 218 479Q194 495 170 479Q165 476 103.5 414.5Q42 353 39 348Q32 338 32 325Q32 312 38 302Q40 297 167 171Q262 76 280.0 58.5Q298 41 304 39ZM375 70H313L190 193Q67 316 65 319Q63 324 66 330Q67 333 127 393Q176 442 183.5 448.5Q191 455 197 454Q200 453 324 329L448 205V143Q448 80 446.5 76.5Q445 73 441.5 71.5Q438 70 375 70ZM373 104Q373 104 373 104Q386 99 398 105Q413 112 415.5 128.5Q418 145 406 156Q393 170 374.5 164.0Q356 158 352 139Q351 128 357.0 118.0Q363 108 373 104Z"/></symbol>
+<symbol id="i-search-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M207 55Q290 49 347 108Q401 166 393 244Q388 295 359 332L354 338L408 392Q462 446 463 450Q466 459 459.5 465.5Q453 472 444 469Q440 468 386 414L332 360L326 365Q289 394 238 399Q171 406 117 365Q100 353 87 336Q44 283 48.5 215.5Q53 148 102 101Q147 59 207 55ZM237 87Q237 87 237 87Q212 84 189 90Q150 99 122 128Q88 161 82 208Q73 276 119 325Q161 368 221 368Q261 368 295 347Q331 325 349 287Q363 257 362 223Q361 194 349 169Q324 113 266 94Q252 89 237 87Z"/></symbol>
+<symbol id="i-settings-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M202 35 207 32 257 33H307L311 35Q321 40 324 49Q325 52 328.5 75.5Q332 99 332 102Q332 102 339.5 106.5Q347 111 351 113L356 116L380 107Q404 97 411 97Q422 97 429 104Q431 107 453.0 144.0Q475 181 478 187Q484 200 474 213Q473 216 452 232L432 248V262V276L451 291Q470 306 474 310Q483 321 479 335Q477 338 455.5 375.5Q434 413 431 417Q426 424 417 426Q408 429 379 417Q357 408 356.0 408.0Q355 408 348.5 412.0Q342 416 337.0 418.5Q332 421 332.0 421.0Q332 421 328.5 446.0Q325 471 324 475Q320 484 310 489L304 492H256H208L202 489Q191 484 188 475Q187 472 183.5 448.5Q180 425 180 422Q180 422 176.5 420.0Q173 418 164 413L156 408L132 417Q108 427 101 427Q90 427 83 420Q80 417 58.0 379.5Q36 342 34 337Q28 323 37 311Q40 308 60 292L80 276V262V248L61 233Q36 214 34 206Q31 197 33 189Q35 186 57 147Q75 115 80.5 108.0Q86 101 92 99Q99 96 105.0 97.5Q111 99 131 107Q155 116 156.0 116.0Q157 116 161.5 113.0Q166 110 173.0 106.5Q180 103 180.0 103.0Q180 103 183.5 78.0Q187 53 188 49Q192 40 202 35ZM294 65Q294 64 256.0 64.0Q218 64 218.0 65.0Q218 66 214 89Q210 118 203 125Q198 129 192.0 132.5Q186 136 179 140Q167 148 158 148Q150 149 124 138Q105 131 104.0 131.0Q103 131 86.0 161.0Q69 191 67 193L66 196L83 210Q101 224 102.0 225.0Q103 226 106 230Q112 237 112 262Q112 284 108.5 290.5Q105 297 85 312Q68 326 67.0 327.0Q66 328 84.5 361.0Q103 394 103.5 394.0Q104 394 125 386Q153 375 162 376Q168 377 179 384Q185 388 191.5 391.5Q198 395 202 399Q208 404 209.5 410.0Q211 416 214 435Q218 458 218.0 459.0Q218 460 256 460H294L295 453Q301 413 303 408Q308 398 321 391Q329 387 336 382Q351 373 363 376Q367 377 387.0 385.0Q407 393 408.0 393.0Q409 393 426.0 363.0Q443 333 445 331L446 328L425 311Q404 295 403 293Q398 288 399 277Q400 269 400 256Q400 239 403.5 232.5Q407 226 426 212Q444 198 445.0 197.0Q446 196 427.5 163.0Q409 130 408.5 130.0Q408 130 387.0 138.5Q366 147 361 148Q349 150 333 140Q326 135 320 132Q305 125 301 111Q301 109 297.5 87.5Q294 66 294 65ZM247 183Q260 181 273 184Q295 189 312.0 205.5Q329 222 334 245Q336 252 336.0 263.0Q336 274 334 279Q329 301 314.0 317.0Q299 333 277 339Q233 352 200 318Q184 303 179 282Q176 274 176 262Q176 246 182 232Q193 204 222 190Q234 184 247 183ZM271 217Q271 217 271 217Q257 212 244 216Q224 221 214.0 239.5Q204 258 211 278Q220 303 245.5 308.5Q271 314 289 296Q300 285 303 271Q306 254 297.0 238.0Q288 222 271 217Z"/></symbol>
+<symbol id="i-swap-vertical-outline" viewBox="0 6 512 512"><path fill="currentColor" d="M153 88Q162 83 171 90Q173 92 174.5 95.0Q176 98 176 241V384L220 340Q263 296 265.5 295.0Q268 294 272.5 294.5Q277 295 279 296Q286 299 287 305Q288 308 288.0 309.0Q288 310 287.5 314.0Q287 318 228.5 376.0Q170 434 167 436Q160 440 153 436Q150 434 91.5 376.0Q33 318 32.5 314.0Q32 310 32.0 309.0Q32 308 33 305Q34 299 41 296Q43 295 47.5 294.5Q52 294 54.5 295.0Q57 296 100 340L144 384V240L145 96L147 93Q149 90 153 88ZM345 88Q345 88 345 88Q352 84 359 88Q362 90 420.5 148.0Q479 206 479.5 210.0Q480 214 480.0 215.0Q480 216 479 219Q478 225 472 228Q467 231 460 229Q456 229 412 184Q412 184 368 140V283Q368 426 366.5 429.0Q365 432 363 434Q357 439 349.5 437.5Q342 436 338 429Q336 426 336 283Q336 283 336 140L292 184Q248 229 244.0 229.5Q240 230 239.0 230.0Q238 230 235 229Q229 228 226 222Q223 217 225 210Q225 206 283.5 148.0Q342 90 345 88Z"/></symbol>
+</svg>
 
-<header class="wrap">
-  <nav class="nav">
-    <a class="brand" href="/"><img src="logo.svg" alt="TCG Portfolio" width="180" height="24"></a>
-  </nav>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="/"><img src="/logo.svg" alt="TCG Portfolio" width="132" height="18"></a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/how-pricing-works">Pricing</a>
+      <a href="/japanese-pokemon-card-prices">Japanese cards</a>
+      <a href="/psa-graded-pokemon-card-prices">PSA prices</a>
+      <a href="/about">About</a>
+    </nav>
+    <a class="pill pill--lav nav-cta" href="#download">Get the app</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg class="i-open" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 7h14M3 13h14"/></svg>
+      <svg class="i-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </button>
+  </div>
 </header>
 
-<main>
-  <section class="hero wrap">
-    <div>
-      <div class="eyebrow">Free on iOS &amp; Android</div>
-      <h1>Collect with clarity.</h1>
-      <p class="tagline">Stay ahead of the market.</p>
-      <p class="sub">The Pokémon card price tracker for collectors. Know what your Pokémon cards are worth. Ungraded or graded, English or Japanese, priced from multiple marketplaces, tracked in one portfolio.</p>
-      <div class="store-row">
-        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact">
-          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1L13 12 3.6 2.6z"/><path fill="#FBBC04" d="M16.8 9.2 13 12l3.8 2.8 3.8-2.2c.5-.3.8-.9.5-1.5-.1-.2-.3-.4-.5-.5l-3.8-2.4z"/><path fill="#4285F4" d="M3.6 21.4c.3.2.7.2 1 0l12.2-7.1L13 12 3.6 21.4z"/><path fill="#34A853" d="M3.6 2.6 13 12l3.8-2.8L4.6 2.1c-.3-.2-.7-.2-1 .1z"/></svg>
-          <div class="lines"><div class="l1">GET IT ON</div><div class="l2">Google Play</div></div>
-        </a>
-        <a class="store-badge" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M16.3 1.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.8-.9 2-1.4 2.8-1.4zm3.6 16.8c-.5 1.1-1 2-1.8 2.9-1 1.2-2 2.4-3.6 2.4-1.5 0-2-.9-3.7-.9-1.7 0-2.3.9-3.7 1-1.5.1-2.6-1.3-3.6-2.5-1.9-2.4-3.4-6.8-1.4-9.8 1-1.5 2.7-2.4 4.3-2.4 1.6 0 2.6 1 3.9 1 1.3 0 2.1-1 3.9-.9 1.4 0 2.9.7 3.9 2-3.4 1.9-2.8 6.9.3 8.2z"/></svg>
-          <div class="lines"><div class="l1">Download on the</div><div class="l2">App Store</div></div>
-        </a>
-        <a class="store-badge" href="https://www.instagram.com/tcg_portfolio/">
-          <svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset="0.35" stop-color="#D62976"/><stop offset="0.65" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="url(#igGrad)" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="url(#igGrad)" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="#D62976"/></svg>
-          <span class="label">Instagram</span>
-        </a>
-        <a class="store-badge" href="https://discord.gg/KDzCF89WP8">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="#5865F2"><path d="M20 6.5a17.6 17.6 0 0 0-4.3-1.3l-.2.4c1.5.4 2.9 1 4.1 1.8-1.8-.9-3.7-1.5-5.6-1.7a13 13 0 0 0-4 0c-1.9.2-3.8.8-5.6 1.7 1.2-.9 2.7-1.5 4.2-1.8l-.2-.4A17.6 17.6 0 0 0 4 6.5C2.4 9 1.6 11.9 1.9 14.8c1.6 1.2 3.4 2 5.3 2.5l.6-1c-.9-.3-1.7-.7-2.5-1.2.2.1.4.3.7.4 3.2 1.5 6.9 1.5 10 0l.7-.4c-.8.5-1.6.9-2.5 1.2l.6 1c1.9-.5 3.7-1.3 5.3-2.5.4-3.4-.5-6.3-2-8.3zM9 13.4c-.7 0-1.3-.7-1.3-1.5S8.3 10.4 9 10.4s1.3.6 1.3 1.5-.6 1.5-1.3 1.5zm6 0c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5 1.3.6 1.3 1.5-.6 1.5-1.3 1.5z"/></svg>
-          <span class="label">Discord</span>
-        </a>
-      </div>
-      <div class="trust-row">
-        <span>Raw + PSA grades</span><span class="dot"></span>
-        <span>Marketplace comps</span><span class="dot"></span>
-        <span>Multi-currency</span>
+<main id="main">
+  <section class="opener">
+    <div class="wrap">
+      <h1 class="type-statement">TCG Portfolio: Pokémon card price tracker</h1>
+      <p class="type-sub">Estimated values for ungraded and PSA graded cards, English and Japanese.</p>
+      <div class="stores">
+        <a class="pill pill--store" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-apple"/></svg>App Store</a>
+        <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-play"/></svg>Google Play</a>
       </div>
     </div>
+    <figure class="stage stage--hero">
+      <div class="crop" style="--z:var(--z-hero);--crop:1"><div class="phone" data-screen="card-details" role="img" aria-label="TCG Portfolio card page for Charizard, Boundaries Crossed 20, with sample prices from Near Mint to PSA grades"><div class="island"></div><div class="screen">
+ <div class="app" style="--scroll:0px"><div class="scroll">
+  <div class="hero" style="--art:url('/img/cards/charizard-boundaries-crossed-20.webp')">
+   <div class="hero-backdrop"></div>
+   <div class="art hero-card"><img src="/img/cards/charizard-boundaries-crossed-20.webp" alt="Charizard, Boundaries Crossed 20, holofoil card art" width="400" height="558" fetchpriority="high" decoding="async"></div>
+   <div class="back-btn"><svg class="ico "><use href="#i-chevron-back-outline"/></svg></div>
+  </div>
+  <div class="card-title">
+   <div class="t-label c-brand">Boundaries Crossed · 20</div>
+   <div class="t-section-title" style="margin-top:4px">Charizard</div>
+   <div class="t-meta">Unlimited · Holofoil</div>
+  </div>
+  <div class="btn-brand"><svg class="ico "><use href="#i-add-outline"/></svg><span>Add to portfolio</span></div>
+  <div class="market">
+   <div class="tabs"><span class="tab is-active">Price</span><span class="tab">Sold</span><span class="tab">Buy</span></div>
+   <div class="tiles"><div class="tile solo is-active"><span class="t-body-bold">NM</span><span class="t-price-sm">$52.68</span></div><div class="tile first"><span class="t-body-bold">PSA 10</span><span class="t-price-sm">$7.4K</span></div><div class="tile "><span class="t-body-bold">PSA 9</span><span class="t-price-sm">$1.2K</span></div><div class="tile "><span class="t-body-bold">PSA 8</span><span class="t-price-sm">$427</span></div><div class="tile "><span class="t-body-bold">PSA 7</span><span class="t-price-sm">$154</span></div><div class="tile "><span class="t-body-bold">PSA 6</span><span class="t-price-sm">$63.31</span></div><div class="tile "><span class="t-body-bold">PSA 5</span><span class="t-price-sm">$59.38</span></div><div class="tile "><span class="t-body-bold">PSA 4</span><span class="t-price-sm">$48.10</span></div><div class="tile "><span class="t-body-bold">PSA 3</span><span class="t-price-sm">$41.75</span></div><div class="tile "><span class="t-body-bold">PSA 2</span><span class="t-price-sm">—</span></div><div class="tile last"><span class="t-body-bold">PSA 1</span><span class="t-price-sm">—</span></div></div>
+   <div class="price-tab">
+    <div class="px">
+     <div class="price-head"><span class="t-label">Market price</span><img class="logo" src="/logo.svg" alt="" width="75" height="10"></div>
+     <div class="t-price price-figure">$52.68</div>
+     <div class="change-row"><span class="t-price up">+$3.14 (6.3%)</span><span class="t-meta">Past month</span></div>
+    </div>
+    <div style="margin-top:16px"><svg class="chart" data-points="[49.54,49.9,50.62,50.1,51.24,50.86,51.92,52.4,52.08,52.68]" data-fill="0"></svg><div class="axis"><span class="t-meta-sm">Oct 4</span><span class="t-meta-sm">Oct 14</span><span class="t-meta-sm">Oct 24</span><span class="t-meta-sm">Nov 3</span></div></div>
+    <div class="periods"><span class="period">7D</span><span class="period is-active">1M</span><span class="period">3M</span><span class="period">6M</span><span class="period">YTD</span><span class="period">1Y</span></div>
+    <div class="t-meta-sm px" style="margin-top:12px">Calculated from market data to show the trend.</div>
+   </div>
+  </div>
+ </div></div>
+ <nav class="dock"><div class="dock-tab"><svg class="ico "><use href="#i-layers-outline"/></svg><span>PORTFOLIO</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-search-outline"/></svg><span>SEARCH</span><i></i></div><div class="dock-tab is-active"><svg class="ico "><use href="#i-albums"/></svg><span>EXPLORE</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-settings-outline"/></svg><span>SETTINGS</span><i></i></div></nav>
+</div></div></div>
+      <figcaption class="type-fine">Sample data for illustration, not real prices.</figcaption>
+    </figure>
+  </section>
 
-    <div class="mock" role="figure" aria-label="Example price chart for a PSA 10 Pikachu">
-      <div class="mock-top">
-        <span class="mock-set">Jungle · 60</span>
+  <section class="sec">
+    <div class="wrap">
+      <p class="words">
+        <span class="type-statement reveal">Ungraded.</span>
+        <span class="type-statement reveal" style="--d:.3s">Graded.</span>
+        <span class="type-statement reveal" style="--d:.6s">Japanese.</span>
+      </p>
+      <h2 class="type-sub reveal" style="--d:.9s;font-weight:400">Ungraded, graded and Japanese Pokémon card prices, in one collection.</h2>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2 class="type-headline reveal">Pokémon card prices by condition, grade and printing</h2>
+      <ul class="facts">
+        <li class="reveal"><h3>Every condition, priced on its own.</h3></li>
+        <li class="reveal" style="--d:.08s"><h3>Every PSA grade, 1 to 10.</h3></li>
+        <li class="reveal" style="--d:.16s"><h3>Every printing, tracked apart.</h3></li>
+        <li class="reveal" style="--d:.24s"><h3>eBay sold listings, one tap away.</h3></li>
+        <li class="reveal" style="--d:.32s"><h3>Your currency, your choice.</h3></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec--reel">
+    <div class="wrap">
+      <h2 class="type-headline reveal">App screens: card prices, portfolio and Japanese sets</h2>
+      <p class="type-sub reveal">Card pages, your portfolio and Japanese sets, as they look in the app.</p>
+    </div>
+    <div class="reel reveal" tabindex="0" role="region" aria-label="App screens, scroll sideways">
+      <figure><div class="crop" style="--z:var(--z-reel);--crop:.92"><div class="phone" data-screen="card-details" role="img" aria-label="Card page scrolled to the market price chart for Charizard, sample data"><div class="island"></div><div class="screen">
+ <div class="app is-scrolled" style="--scroll:450px"><div class="scroll">
+  <div class="hero" style="--art:url('/img/cards/charizard-boundaries-crossed-20.webp')">
+   <div class="hero-backdrop"></div>
+   <div class="art hero-card"><img src="/img/cards/charizard-boundaries-crossed-20.webp" alt="Charizard, Boundaries Crossed 20, holofoil card art" width="400" height="558" loading="lazy" decoding="async"></div>
+   <div class="back-btn"><svg class="ico "><use href="#i-chevron-back-outline"/></svg></div>
+  </div>
+  <div class="card-title">
+   <div class="t-label c-brand">Boundaries Crossed · 20</div>
+   <div class="t-section-title" style="margin-top:4px">Charizard</div>
+   <div class="t-meta">Unlimited · Holofoil</div>
+  </div>
+  <div class="btn-brand"><svg class="ico "><use href="#i-add-outline"/></svg><span>Add to portfolio</span></div>
+  <div class="market">
+   <div class="tabs"><span class="tab is-active">Price</span><span class="tab">Sold</span><span class="tab">Buy</span></div>
+   <div class="tiles"><div class="tile solo is-active"><span class="t-body-bold">NM</span><span class="t-price-sm">$52.68</span></div><div class="tile first"><span class="t-body-bold">PSA 10</span><span class="t-price-sm">$7.4K</span></div><div class="tile "><span class="t-body-bold">PSA 9</span><span class="t-price-sm">$1.2K</span></div><div class="tile "><span class="t-body-bold">PSA 8</span><span class="t-price-sm">$427</span></div><div class="tile "><span class="t-body-bold">PSA 7</span><span class="t-price-sm">$154</span></div><div class="tile "><span class="t-body-bold">PSA 6</span><span class="t-price-sm">$63.31</span></div><div class="tile "><span class="t-body-bold">PSA 5</span><span class="t-price-sm">$59.38</span></div><div class="tile "><span class="t-body-bold">PSA 4</span><span class="t-price-sm">$48.10</span></div><div class="tile "><span class="t-body-bold">PSA 3</span><span class="t-price-sm">$41.75</span></div><div class="tile "><span class="t-body-bold">PSA 2</span><span class="t-price-sm">—</span></div><div class="tile last"><span class="t-body-bold">PSA 1</span><span class="t-price-sm">—</span></div></div>
+   <div class="price-tab">
+    <div class="px">
+     <div class="price-head"><span class="t-label">Market price</span><img class="logo" src="/logo.svg" alt="" width="75" height="10"></div>
+     <div class="t-price price-figure">$52.68</div>
+     <div class="change-row"><span class="t-price up">+$3.14 (6.3%)</span><span class="t-meta">Past month</span></div>
+    </div>
+    <div style="margin-top:16px"><svg class="chart" data-points="[49.54,49.9,50.62,50.1,51.24,50.86,51.92,52.4,52.08,52.68]" data-fill="0"></svg><div class="axis"><span class="t-meta-sm">Oct 4</span><span class="t-meta-sm">Oct 14</span><span class="t-meta-sm">Oct 24</span><span class="t-meta-sm">Nov 3</span></div></div>
+    <div class="periods"><span class="period">7D</span><span class="period is-active">1M</span><span class="period">3M</span><span class="period">6M</span><span class="period">YTD</span><span class="period">1Y</span></div>
+    <div class="t-meta-sm px" style="margin-top:12px">Calculated from market data to show the trend.</div>
+   </div>
+  </div>
+ </div></div>
+ <nav class="dock"><div class="dock-tab"><svg class="ico "><use href="#i-layers-outline"/></svg><span>PORTFOLIO</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-search-outline"/></svg><span>SEARCH</span><i></i></div><div class="dock-tab is-active"><svg class="ico "><use href="#i-albums"/></svg><span>EXPLORE</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-settings-outline"/></svg><span>SETTINGS</span><i></i></div></nav>
+</div></div></div><figcaption>Prices</figcaption></figure>
+      <figure><div class="crop" style="--z:var(--z-reel);--crop:.92"><div class="phone" data-screen="portfolio" role="img" aria-label="Portfolio screen with a sample total value and holdings"><div class="island"></div><div class="screen">
+ <div class="app"><div class="scroll pf">
+  <div class="pf-header">
+   <div class="px">
+    <div class="price-head" style="margin-bottom:8px"><span class="t-label">Portfolio value</span><img class="logo" src="/logo.svg" alt="" width="75" height="10"></div>
+    <div class="pf-value">
+     <span class="t-display">$12,486</span>
+     <span class="eye"><svg class="ico "><use href="#i-eye-outline"/></svg></span>
+    </div>
+    <div class="change-row"><span class="t-price up">+$148 (1.2%)</span><span class="t-meta">Past week</span></div>
+   </div>
+   <div style="margin-top:16px"><svg class="chart" data-points="[12338,12352,12329,12391,12436,12418,12486]" data-fill="1"></svg><div class="axis"><span class="t-meta-sm">Oct 28</span><span class="t-meta-sm">Oct 30</span><span class="t-meta-sm">Nov 1</span><span class="t-meta-sm">Nov 3</span></div></div>
+   <div class="periods"><span class="period is-active">7D</span><span class="period">1M</span><span class="period">3M</span><span class="period">6M</span><span class="period">YTD</span><span class="period">1Y</span></div>
+  </div>
+  <div class="search-slot"><div class="search-pill">
+   <div class="search-field"><svg class="ico "><use href="#i-search-outline"/></svg><span class="t-meta">Search 86 cards…</span></div>
+   <span class="tool"><svg class="ico "><use href="#i-swap-vertical-outline"/></svg></span><span class="tool"><svg class="ico "><use href="#i-funnel-outline"/></svg></span><span class="tool"><svg class="ico "><use href="#i-ellipsis-horizontal"/></svg></span>
+  </div></div>
+  
+   <div class="row">
+    <div class="slab "><div class="slab-band"><div class="slab-field">PSA 10</div></div>
+     <div class="slab-window"><div class="art"><img src="/img/cards/latias-latios-gx-team-up-113.webp" alt="Latias &amp; Latios-GX, Team Up 113, card art in a PSA slab" width="160" height="223" loading="lazy" decoding="async"></div></div></div>
+    <div class="row-text">
+     <div class="t-row-title ellip">Latias &amp; Latios-GX</div>
+     <div class="t-meta ellip">Team Up · 113</div>
+     <div class="t-meta ellip">Holofoil</div>
+     <div class="t-meta ellip">PSA 10 (GEM-MT)</div>
+    </div>
+    <div class="row-price"><span class="t-price-sm">$7.5K</span><span class="t-price-micro up">+$96.20 (1.3%)</span></div>
+   </div>
+   <div class="row">
+    <div class="slab "><div class="slab-band"><div class="slab-field">PSA 10</div></div>
+     <div class="slab-window"><div class="art"><img src="/img/cards/victini-v-battle-styles-144.webp" alt="Victini V, Battle Styles 144, card art in a PSA slab" width="160" height="223" loading="lazy" decoding="async"></div></div></div>
+    <div class="row-text">
+     <div class="t-row-title ellip">Victini V</div>
+     <div class="t-meta ellip">Battle Styles · 144</div>
+     <div class="t-meta ellip">Holofoil</div>
+     <div class="t-meta ellip">PSA 10 (GEM-MT)</div>
+    </div>
+    <div class="row-price"><span class="t-price-sm">$2.7K</span><span class="t-price-micro down">−$31.40 (1.1%)</span></div>
+   </div>
+   <div class="row">
+    <div class="slab raw"><div class="slab-band"><div class="slab-field">NM</div></div>
+     <div class="slab-window"><div class="art"><img src="/img/cards/jirachi-v-astral-radiance-170.webp" alt="Jirachi V, Astral Radiance 170 card art" width="160" height="223" loading="lazy" decoding="async"></div></div></div>
+    <div class="row-text">
+     <div class="t-row-title ellip">Jirachi V</div>
+     <div class="t-meta ellip">Astral Radiance · 170</div>
+     <div class="t-meta ellip">Holofoil</div>
+     <div class="t-meta ellip">Near Mint (NM)</div>
+    </div>
+    <div class="row-price"><span class="t-price-sm">$24.65</span><span class="t-price-micro up">+$0.42 (1.7%)</span></div>
+   </div>
+ </div></div>
+ <nav class="dock"><div class="dock-tab is-active"><svg class="ico "><use href="#i-layers"/></svg><span>PORTFOLIO</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-search-outline"/></svg><span>SEARCH</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-albums-outline"/></svg><span>EXPLORE</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-settings-outline"/></svg><span>SETTINGS</span><i></i></div></nav>
+</div></div></div><figcaption>Your Pokémon card collection, valued.</figcaption></figure>
+      <figure><div class="crop" style="--z:var(--z-reel);--crop:.92"><div class="phone" data-screen="set-cards" role="img" aria-label="Japanese set VSTAR Universe in TCG Portfolio, a grid of cards with sample Near Mint prices"><div class="island"></div><div class="screen">
+ <div class="app">
+  <div class="navbar"><svg class="ico "><use href="#i-arrow-back-outline"/></svg></div>
+  <div class="scroll sc">
+   <div class="set-header">
+    <div style="flex:1;min-width:0">
+     <div class="t-section-title">VSTAR Universe</div>
+     <div class="set-meta"><span class="t-meta-strong">Dec 2022 · 262 cards</span><span class="set-symbol"></span></div>
+    </div>
+   </div>
+   <div class="search-slot"><div class="search-pill">
+    <div class="search-field"><svg class="ico "><use href="#i-search-outline"/></svg><span class="t-meta">Search cards…</span></div>
+    <span class="tool"><svg class="ico "><use href="#i-funnel-outline"/></svg></span><span class="tool"><svg class="ico "><use href="#i-ellipsis-horizontal"/></svg></span>
+   </div></div>
+   <div class="chips"><span class="chip"><svg class="ico "><use href="#i-pricetag-outline"/></svg><span class="t-option">Price: Near Mint (NM)</span></span></div>
+   <div class="grid">
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.21</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Normal</span><span class="t-meta-sm num">001</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.18</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Normal</span><span class="t-meta-sm num">002</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.64</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Holofoil</span><span class="t-meta-sm num">003</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.15</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Normal</span><span class="t-meta-sm num">004</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.19</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Normal</span><span class="t-meta-sm num">005</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.88</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Holofoil</span><span class="t-meta-sm num">006</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.22</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Normal</span><span class="t-meta-sm num">007</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$0.17</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Normal</span><span class="t-meta-sm num">008</span></div></div></div>
+    <div class="gtile"><div class="art"></div>
+     <div class="gcap"><div><span class="t-price-sm ellip">$1.12</span></div>
+      <div><span class="t-meta-sm c-strong ellip">Holofoil</span><span class="t-meta-sm num">009</span></div></div></div></div>
+  </div>
+ </div>
+ <nav class="dock"><div class="dock-tab"><svg class="ico "><use href="#i-layers-outline"/></svg><span>PORTFOLIO</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-search-outline"/></svg><span>SEARCH</span><i></i></div><div class="dock-tab is-active"><svg class="ico "><use href="#i-albums"/></svg><span>EXPLORE</span><i></i></div><div class="dock-tab"><svg class="ico "><use href="#i-settings-outline"/></svg><span>SETTINGS</span><i></i></div></nav>
+</div></div></div><figcaption>Japanese</figcaption></figure>
+    </div>
+    <p class="type-fine wrap reveal">Sample data for illustration, not real prices.</p>
+  </section>
+
+  <section class="sec sec--quiet">
+    <div class="wrap">
+      <h2 class="type-label">Pokémon card pricing guides</h2>
+      <ul class="links">
+        <li><a href="/how-pricing-works">How pricing works</a></li>
+        <li><a href="/japanese-pokemon-card-prices">Japanese Pokémon card prices</a></li>
+        <li><a href="/psa-graded-pokemon-card-prices">PSA graded Pokémon card prices</a></li>
+        <li><a href="/about">About TCG Portfolio</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec--close" id="download">
+    <div class="wrap">
+      <h2 class="type-statement reveal"><em>Free</em> on iPhone and Android.</h2>
+      <p class="type-sub reveal">Check prices without an account. Sign in to track a portfolio.</p>
+      <div class="stores reveal">
+        <a class="pill pill--store" href="https://apps.apple.com/us/app/tcg-portfolio-card-price-app/id1601696394"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-apple"/></svg>App Store</a>
+        <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-play"/></svg>Google Play</a>
       </div>
-      <div class="mock-name">Pikachu</div>
-      <div class="mock-condrow">
-        <span class="chip">Ungraded</span>
-        <span class="chip on">PSA</span>
-      </div>
-      <div class="ph">
-        <div class="ph-label">PSA 10</div>
-        <div class="ph-val" id="ph-val">$45.00</div>
-        <div class="ph-change"><span id="ph-change"></span><span class="ph-caption" id="ph-caption"></span></div>
-      </div>
-      <div class="chart" id="chart">
-        <svg>
-          <defs>
-            <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#b9b6e9" /></pattern>
-            <linearGradient id="fade-stops" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#fff" stop-opacity=".75" />
-              <stop offset="1" stop-color="#fff" stop-opacity="0" />
-            </linearGradient>
-            <mask id="fade" maskUnits="userSpaceOnUse"><rect class="fade-rect" fill="url(#fade-stops)" /></mask>
-          </defs>
-          <g class="grid"></g>
-          <g class="fill">
-            <path class="area" />
-            <path class="dots" fill="url(#dots)" mask="url(#fade)" />
-          </g>
-          <path class="line" />
-          <line class="cross" y1="0" visibility="hidden" />
-          <circle class="ring" r="12" />
-          <circle class="dot" r="5" />
-        </svg>
-      </div>
-      <div class="periods" id="periods"></div>
-      <div class="mock-holdings"><b>Portfolio value</b> &nbsp;$14,208&nbsp; <span class="up">▲ 6.2%</span> this month</div>
     </div>
   </section>
 </main>
 
-<footer class="wrap legal">
-  <a href="terms.html">Terms &amp; Conditions</a>
-  <span class="dot"></span>
-  <a href="privacy.html">Privacy Policy</a>
-  <span class="dot"></span>
-  <a href="delete-account.html">Delete Account</a>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="nav-logo" href="/"><img src="/logo.svg" alt="TCG Portfolio" width="132" height="18" loading="lazy"></a>
+      <nav class="footer-links" aria-label="Social">
+        <a href="https://www.instagram.com/tcg_portfolio/">Instagram</a>
+        <a href="https://discord.gg/KDzCF89WP8">Discord</a>
+      </nav>
+    </div>
+    <nav class="footer-links" aria-label="Site">
+      <a href="/about">About</a>
+      <a href="/how-pricing-works">How pricing works</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/delete-account">Delete Account</a>
+      <a href="mailto:tcgportfoliodev@gmail.com">Contact</a>
+    </nav>
+    <p class="disclaimer">Independent app, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company, including PSA. eBay, TCGplayer and other names are trademarks of their owners. Price figures are estimates, not financial advice.</p>
+  </div>
 </footer>
-
-
-<script>
-// Chart maths ported from tcg-portfolio-ui src/features/portfolio/chartGeometry.ts.
-(() => {
-  const PERIODS = [
-    { label: '7D', days: 7, caption: 'Past week', ys: [43.5, 44.2, 43.8, 44.9, 44.1, 44.6, 45] },
-    { label: '1M', days: 30, caption: 'Past month', ys: [38, 38.6, 39.4, 39, 40.2, 41, 40.5, 41.8, 42.6, 42.1, 43.4, 44, 43.6, 45] },
-    { label: '3M', days: 91, caption: 'Past 3 months', ys: [34, 35.2, 34.6, 36.8, 36, 38.2, 37.4, 39, 38.1, 40.5, 41.2, 40.4, 42.8, 44.1, 45] },
-    { label: '6M', days: 182, caption: 'Past 6 months', ys: [41, 39.5, 37.8, 38.4, 36.2, 35, 36.4, 34.8, 37.2, 38.9, 40.6, 42.3, 43.5, 45] },
-    { label: 'YTD', days: null, caption: 'Year to date', ys: [29, 30.5, 32, 31.2, 33.8, 35.5, 34.2, 36.9, 38.4, 37.1, 39.6, 41.8, 40.5, 43.2, 45] },
-    { label: '1Y', days: 365, caption: 'Past year', ys: [52, 49.5, 47, 48.2, 44.8, 42, 39.5, 36.8, 33.4, 31, 32.6, 35.2, 38.8, 37.5, 41.2, 43.9, 45] },
-  ];
-  const PLOT = { left: 6, right: 14, top: 12, bottomGap: 8 };
-  const HEADROOM = 1.12;
-  const DRAW_MS = 1100;
-
-  // Fritsch-Carlson tangents: the cubic never passes the real minimum or maximum.
-  const monotoneTangents = (xs, ys) => {
-    const n = xs.length;
-    const slopes = [];
-    for (let i = 0; i < n - 1; i++) slopes.push((ys[i + 1] - ys[i]) / (xs[i + 1] - xs[i]));
-    const t = [slopes[0]];
-    for (let i = 1; i < n - 1; i++) t.push(slopes[i - 1] * slopes[i] <= 0 ? 0 : (slopes[i - 1] + slopes[i]) / 2);
-    t.push(slopes[n - 2]);
-    for (let i = 0; i < n - 1; i++) {
-      if (slopes[i] === 0) { t[i] = 0; t[i + 1] = 0; continue; }
-      const a = t[i] / slopes[i], b = t[i + 1] / slopes[i], len = a * a + b * b;
-      if (len > 9) { const k = 3 / Math.sqrt(len); t[i] = k * a * slopes[i]; t[i + 1] = k * b * slopes[i]; }
-    }
-    return t;
-  };
-
-  const linePath = (xs, ys) => {
-    const t = monotoneTangents(xs, ys);
-    let d = `M${xs[0].toFixed(1)},${ys[0].toFixed(1)}`;
-    for (let i = 0; i < xs.length - 1; i++) {
-      const third = (xs[i + 1] - xs[i]) / 3;
-      d += ` C${(xs[i] + third).toFixed(1)},${(ys[i] + t[i] * third).toFixed(1)}` +
-        ` ${(xs[i + 1] - third).toFixed(1)},${(ys[i + 1] - t[i + 1] * third).toFixed(1)}` +
-        ` ${xs[i + 1].toFixed(1)},${ys[i + 1].toFixed(1)}`;
-    }
-    return d;
-  };
-
-  const chart = document.getElementById('chart');
-  const svg = chart.querySelector('svg');
-  const [fill, area, dots, line, cross, ring, dot, grid, fadeRect] = ['.fill', '.area', '.dots', '.line', '.cross', '.ring', '.dot', '.grid', '.fade-rect'].map(q => svg.querySelector(q));
-  const valEl = document.getElementById('ph-val');
-  const changeEl = document.getElementById('ph-change');
-  const captionEl = document.getElementById('ph-caption');
-  const pillsEl = document.getElementById('periods');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const money = v => '$' + v.toFixed(2);
-  const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-
-  let period = PERIODS[1];
-  let pts = [];
-
-  const spanDays = p => p.days ?? Math.max(1, Math.round((Date.now() - new Date(new Date().getFullYear(), 0, 1)) / 864e5));
-
-  const geometry = () => {
-    const w = chart.clientWidth, h = chart.clientHeight, ys = period.ys, n = ys.length;
-    const min = Math.min(...ys), max = Math.max(...ys), span = (max - min) * HEADROOM, bottom = h - PLOT.bottomGap;
-    pts = ys.map((v, i) => ({
-      v,
-      x: PLOT.left + (i * (w - PLOT.left - PLOT.right)) / (n - 1),
-      y: bottom - ((v - min) / span) * (bottom - PLOT.top),
-    }));
-    const d = linePath(pts.map(p => p.x), pts.map(p => p.y));
-    const last = pts[n - 1];
-    return { d, area: `${d} L${last.x.toFixed(1)},${h} L${pts[0].x.toFixed(1)},${h} Z`, w, h, bottom };
-  };
-
-  const setHeader = (i, scrubbing) => {
-    const first = period.ys[0], v = period.ys[i], diff = v - first, pct = (diff / first) * 100, up = diff >= 0;
-    valEl.textContent = money(v);
-    changeEl.textContent = `${up ? '▲' : '▼'} ${up ? '' : '−'}${money(Math.abs(diff))} (${up ? '+' : '−'}${Math.abs(pct).toFixed(1)}%)`;
-    changeEl.className = up ? 'up' : 'down';
-    if (scrubbing) {
-      const ago = spanDays(period) * (1 - i / (period.ys.length - 1));
-      captionEl.textContent = dateFmt.format(new Date(Date.now() - ago * 864e5));
-    } else captionEl.textContent = period.caption;
-  };
-
-  const placeDot = (p, showRing) => {
-    for (const c of [dot, ring]) { c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); }
-    ring.style.visibility = showRing ? 'visible' : 'hidden';
-  };
-
-  const draw = animate => {
-    const g = geometry();
-    line.setAttribute('d', g.d);
-    area.setAttribute('d', g.area);
-    dots.setAttribute('d', g.area);
-    fadeRect.setAttribute('width', g.w);
-    fadeRect.setAttribute('height', g.h);
-    // Three dashed gridlines at fixed shares of the plot, plus the solid baseline.
-    grid.innerHTML = [...[0.25, 0.5, 0.75].map(k => g.bottom - k * (g.bottom - PLOT.top)), g.h - 0.5]
-      .map((y, i) => `<line x1="${PLOT.left}" x2="${g.w - PLOT.right + 4}" y1="${y}" y2="${y}"${i < 3 ? ' stroke-dasharray="2 4"' : ''} />`)
-      .join('');
-    cross.setAttribute('y2', g.h);
-    const end = pts[pts.length - 1];
-    placeDot(end, !animate);
-    setHeader(pts.length - 1, false);
-    if (!animate || reduced) {
-      clearTimeout(draw.t);
-      Object.assign(line.style, { transition: 'none', strokeDasharray: 'none', strokeDashoffset: 0 });
-      Object.assign(fill.style, { transition: 'none', clipPath: 'none' });
-      dot.style.visibility = 'visible';
-      ring.style.visibility = 'visible';
-      return;
-    }
-    // Draw-in: dash the line to its own length, then run the dash off.
-    const len = line.getTotalLength();
-    line.style.transition = 'none';
-    line.style.strokeDasharray = len;
-    line.style.strokeDashoffset = len;
-    Object.assign(fill.style, { transition: 'none', clipPath: 'inset(0 100% 0 0)' });
-    dot.style.visibility = 'hidden';
-    line.getBoundingClientRect();
-    line.style.transition = `stroke-dashoffset ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
-    line.style.strokeDashoffset = 0;
-    fill.style.transition = `clip-path ${DRAW_MS}ms cubic-bezier(.65,0,.35,1)`;
-    fill.style.clipPath = 'inset(0 0 0 0)';
-    clearTimeout(draw.t);
-    draw.t = setTimeout(() => { dot.style.visibility = 'visible'; ring.style.visibility = 'visible'; }, DRAW_MS);
-  };
-
-  for (const p of PERIODS) {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.textContent = p.label;
-    b.setAttribute('aria-pressed', p === period);
-    b.onclick = () => {
-      period = p;
-      for (const el of pillsEl.children) el.setAttribute('aria-pressed', el === b);
-      draw(true);
-    };
-    pillsEl.append(b);
-  }
-
-  const scrub = e => {
-    const x = e.clientX - chart.getBoundingClientRect().left;
-    let i = 0;
-    for (let k = 1; k < pts.length; k++) if (Math.abs(pts[k].x - x) < Math.abs(pts[i].x - x)) i = k;
-    cross.setAttribute('x1', pts[i].x);
-    cross.setAttribute('x2', pts[i].x);
-    cross.setAttribute('visibility', 'visible');
-    placeDot(pts[i], false);
-    setHeader(i, true);
-  };
-  const endScrub = () => {
-    cross.setAttribute('visibility', 'hidden');
-    placeDot(pts[pts.length - 1], true);
-    setHeader(pts.length - 1, false);
-  };
-  chart.addEventListener('pointermove', scrub);
-  chart.addEventListener('pointerdown', scrub);
-  chart.addEventListener('pointerleave', endScrub);
-  chart.addEventListener('pointercancel', endScrub);
-  chart.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') endScrub(); });
-
-  // Skip the observer's first call, which lands right after the opening draw-in.
-  let observed = false;
-  new ResizeObserver(() => observed ? draw(false) : (observed = true)).observe(chart);
-  draw(true);
-})();
-</script>
 
 </body>
 </html>

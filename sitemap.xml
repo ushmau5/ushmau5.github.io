@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tcgportfolio.io/</loc></url>
-  <url><loc>https://tcgportfolio.io/privacy.html</loc></url>
-  <url><loc>https://tcgportfolio.io/terms.html</loc></url>
+  <url><loc>https://tcgportfolio.io/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/about</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/how-pricing-works</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/japanese-pokemon-card-prices</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/psa-graded-pokemon-card-prices</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/privacy</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/terms</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://tcgportfolio.io/delete-account</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>
