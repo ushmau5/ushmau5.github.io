@@ -57,7 +57,7 @@
     --paper:#f2f2f9;
     --text:#fff;
     --muted:rgba(255,255,255,.6);
-    --muted-2:rgba(255,255,255,.4);
+    --muted-2:rgba(255,255,255,.5);
     --surface:rgba(64,70,77,.35);
     --line:rgba(64,70,77,.8);
     --success:hsl(124 60% 60%);
@@ -132,9 +132,9 @@
     max-width:46ch;
   }
   .store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;}
+  .store-badge,.info-item{border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);}
   .store-badge{
     display:flex;align-items:center;gap:9px;height:var(--cta);padding:0 16px;
-    border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
     text-decoration:none;transition:border-color .15s,transform .15s;
   }
   @media (hover:hover){.store-badge:hover{border-color:var(--accent);transform:translateY(-1px);}}
@@ -192,6 +192,7 @@
   .mock-holdings{margin-top:16px;font-size:13px;color:var(--muted-2);display:flex;flex-wrap:wrap;align-items:center;gap:7px;}
   .mock-holdings b{color:var(--muted);font-weight:500;}
   .mock-note{margin:12px 0 0;font-size:12px;color:var(--muted-2);}
+  .legal .disclaimer{flex-basis:100%;margin:0;}
 
   /* ---------- info sections ---------- */
   .info{
@@ -200,10 +201,7 @@
     grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
     gap:var(--gutter);
   }
-  .info-item{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:24px;
-  }
+  .info-item{padding:24px;}
   .info h2{margin:0;font-size:20px;font-weight:500;letter-spacing:-.02em;}
   .info p{margin:10px 0 0;font-size:15px;line-height:1.45;color:var(--muted);}
 
@@ -308,15 +306,15 @@
     </div>
     <div class="info-item">
       <h2>Raw and PSA graded prices</h2>
-      <p>See prices for ungraded (raw) copies and for PSA graded copies. Grading figures are estimates built from past graded and ungraded sales, plus the population data and grading fees that grading companies publish.</p>
+      <p>TCG Portfolio shows prices for ungraded (raw) copies and for PSA graded copies. Grading figures are estimates built from past graded and ungraded sales, plus the population data and grading fees that grading companies publish.</p>
     </div>
     <div class="info-item">
       <h2>English and Japanese cards</h2>
-      <p>Track English and Japanese Pokémon cards side by side in the same collection, and view values in the currency you use.</p>
+      <p>TCG Portfolio tracks English and Japanese Pokémon cards side by side in the same collection, and shows values in the currency you use.</p>
     </div>
     <div class="info-item">
       <h2>Where do the prices come from?</h2>
-      <p>Prices are estimates compiled from third-party sources, including eBay and TCGplayer. They can be delayed or incomplete, and they are not appraisals or offers. Some links to marketplaces are affiliate links, which never change the values the app shows.</p>
+      <p>TCG Portfolio prices are estimates compiled from third-party sources, including eBay and TCGplayer. They can be inaccurate, delayed or incomplete, and they are not appraisals, offers or guarantees. Many links to marketplaces are affiliate links, so we may earn a commission if you buy; this never changes the cards or estimated values the app shows.</p>
     </div>
     <div class="info-item">
       <h2>Is TCG Portfolio free?</h2>
@@ -331,6 +329,7 @@
   <a href="/privacy">Privacy Policy</a>
   <span class="dot"></span>
   <a href="/delete-account">Delete Account</a>
+  <p class="disclaimer">Independent app, not affiliated with or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company International or any grading company, including PSA. Names are trademarks of their owners.</p>
 </footer>
 
 
