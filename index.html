@@ -111,7 +111,7 @@
   }
   h1{
     font-weight:500;
-    font-size:clamp(44px,6.4vw,84px);
+    font-size:clamp(40px,5.2vw,68px);
     line-height:.92;
     letter-spacing:-.04em;
   }
@@ -191,6 +191,22 @@
 
   .mock-holdings{margin-top:16px;font-size:13px;color:var(--muted-2);display:flex;flex-wrap:wrap;align-items:center;gap:7px;}
   .mock-holdings b{color:var(--muted);font-weight:500;}
+  .mock-note{margin:12px 0 0;font-size:12px;color:var(--muted-2);}
+
+  /* ---------- info sections ---------- */
+  .info{
+    padding-block:24px 72px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
+    gap:var(--gutter);
+  }
+  .info-item{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .info h2{margin:0;font-size:20px;font-weight:500;letter-spacing:-.02em;}
+  .info p{margin:10px 0 0;font-size:15px;line-height:1.45;color:var(--muted);}
+
   .up{color:var(--success);}
   .down{color:var(--destructive);}
 
@@ -216,8 +232,8 @@
   <section class="hero wrap">
     <div>
       <div class="eyebrow">Free on iOS &amp; Android</div>
-      <h1>Collect with clarity.</h1>
-      <p class="tagline">Stay ahead of the market.</p>
+      <h1>TCG Portfolio: Pokémon card price tracker</h1>
+      <p class="tagline">Collect with clarity. Stay ahead of the market.</p>
       <p class="sub">The Pokémon card price tracker for collectors. Know what your Pokémon cards are worth. Ungraded or graded, English or Japanese, priced from multiple marketplaces, tracked in one portfolio.</p>
       <div class="store-row">
         <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.tcgportfolioreact">
@@ -281,16 +297,40 @@
       </div>
       <div class="periods" id="periods"></div>
       <div class="mock-holdings"><b>Portfolio value</b> &nbsp;$14,208&nbsp; <span class="up">▲ 6.2%</span> this month</div>
+      <p class="mock-note">Illustrative example, not live prices.</p>
+    </div>
+  </section>
+
+  <section class="info wrap" aria-label="About TCG Portfolio">
+    <div class="info-item">
+      <h2>What is TCG Portfolio?</h2>
+      <p>TCG Portfolio is a free Pokémon card price tracker and collection app for iOS and Android. Add the cards you own, see an estimated value for each one, and follow what your whole collection is worth over time in one portfolio.</p>
+    </div>
+    <div class="info-item">
+      <h2>Raw and PSA graded prices</h2>
+      <p>See prices for ungraded (raw) copies and for PSA graded copies. Grading figures are estimates built from past graded and ungraded sales, plus the population data and grading fees that grading companies publish.</p>
+    </div>
+    <div class="info-item">
+      <h2>English and Japanese cards</h2>
+      <p>Track English and Japanese Pokémon cards side by side in the same collection, and view values in the currency you use.</p>
+    </div>
+    <div class="info-item">
+      <h2>Where do the prices come from?</h2>
+      <p>Prices are estimates compiled from third-party sources, including eBay and TCGplayer. They can be delayed or incomplete, and they are not appraisals or offers. Some links to marketplaces are affiliate links, which never change the values the app shows.</p>
+    </div>
+    <div class="info-item">
+      <h2>Is TCG Portfolio free?</h2>
+      <p>Yes. The core app is free and supported by ads. Optional paid features may be offered as a subscription through the App Store or Google Play.</p>
     </div>
   </section>
 </main>
 
 <footer class="wrap legal">
-  <a href="terms.html">Terms &amp; Conditions</a>
+  <a href="/terms">Terms &amp; Conditions</a>
   <span class="dot"></span>
-  <a href="privacy.html">Privacy Policy</a>
+  <a href="/privacy">Privacy Policy</a>
   <span class="dot"></span>
-  <a href="delete-account.html">Delete Account</a>
+  <a href="/delete-account">Delete Account</a>
 </footer>
 
 
