@@ -1,4 +1,3 @@
-applovin.com, e8748fc9ad28b2c94334dff694884937, DIRECT
 google.com, pub-6173974590706703, DIRECT, f08c47fec0942fa0
 unity.com, 148042361, DIRECT, 96cabb5fbdde37a7
 adyoulike.com, 2d578cf695c89ec2ba707280319d2020, RESELLER
@@ -125,7 +124,7 @@ sharethrough.com, bXzzb1bR, RESELLER, d53b998a7bd4ecd2
 sharethrough.com, NNB0Zl76, RESELLER, d53b998a7bd4ecd2
 sharethrough.com, SniqCOMC, RESELLER, d53b998a7bd4ecd2
 sharethrough.com, UbYLkrys, RESELLER, d53b998a7bd4ecd2
-sharethrough.com, UvcAx8IL, RESELLER, d53b998a7bd4ecd12
+sharethrough.com, UvcAx8IL, RESELLER, d53b998a7bd4ecd2
 smaato.com, 1100047589, RESELLER, 07bcf65f187117b4
 smaato.com, 1100055750, RESELLER, 07bcf65f187117b4
 smaato.com, 1100058938, RESELLER, 07bcf65f187117b4
